@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicines List</title>
+</head>
+<body>
+    <h1>Лекарственные препораты</h1>
+    <ul>
+        {% for medicine in medicines %}
+        <div><a href="{% url 'medicine_detail' pk=medicine.id %}">{{ medicine.name }}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ medicine.cost }}руб.</div>        {% endfor %}
+    </ul>
+</body>
+</html>

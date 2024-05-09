@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FAQ</title>
+</head>
+<body>
+    <h1>Вопрос-Ответ</h1>
+    {% for faq in faqs %}
+        <div>
+            <h2>Вопрос</h2>
+            <p>{{ faq.question }}</p>
+            <h2>Ответ</h2>
+            <p>{{ faq.answer }}</p>
+            <p>спрашивает: {{ faq.date }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>

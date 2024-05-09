@@ -1,0 +1,1629 @@
+2024-05-05 15:34:21,121 INFO Watching for file changes with StatReloader
+2024-05-05 15:34:25,110 WARNING Not Found: /
+2024-05-05 15:39:00,987 ERROR Internal Server Error: /admin/pharmacy/article/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: pharmacy_article
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\options.py", line 716, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\options.py", line 1985, in changelist_view
+    cl = self.get_changelist_instance(request)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\options.py", line 864, in get_changelist_instance
+    return ChangeList(
+           ^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\views\main.py", line 145, in __init__
+    self.get_results(request)
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\views\main.py", line 312, in get_results
+    result_count = paginator.count
+                   ^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\paginator.py", line 110, in count
+    return c()
+           ^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\query.py", line 620, in count
+    return self.query.get_count(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 629, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 615, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: pharmacy_article
+2024-05-05 16:14:39,021 ERROR Internal Server Error: /admin/pharmacy/faq/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: pharmacy_faq
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\options.py", line 716, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\options.py", line 1985, in changelist_view
+    cl = self.get_changelist_instance(request)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\options.py", line 864, in get_changelist_instance
+    return ChangeList(
+           ^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\views\main.py", line 145, in __init__
+    self.get_results(request)
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\views\main.py", line 312, in get_results
+    result_count = paginator.count
+                   ^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\paginator.py", line 110, in count
+    return c()
+           ^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\query.py", line 620, in count
+    return self.query.get_count(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 629, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 615, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: pharmacy_faq
+2024-05-05 16:17:09,166 ERROR Internal Server Error: /admin/pharmacy/review/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: pharmacy_review
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\options.py", line 716, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 240, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\options.py", line 1985, in changelist_view
+    cl = self.get_changelist_instance(request)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\options.py", line 864, in get_changelist_instance
+    return ChangeList(
+           ^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\views\main.py", line 145, in __init__
+    self.get_results(request)
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\views\main.py", line 312, in get_results
+    result_count = paginator.count
+                   ^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\paginator.py", line 110, in count
+    return c()
+           ^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\query.py", line 620, in count
+    return self.query.get_count(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 629, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 615, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\backends\sqlite3\base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: pharmacy_review
+2024-05-05 16:57:14,350 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-05 16:57:21,470 INFO Watching for file changes with StatReloader
+2024-05-05 16:57:28,670 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-05 16:57:29,702 INFO Watching for file changes with StatReloader
+2024-05-05 16:57:34,227 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-05 16:57:35,395 INFO Watching for file changes with StatReloader
+2024-05-06 20:55:42,725 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-06 20:55:44,134 INFO Watching for file changes with StatReloader
+2024-05-06 21:43:07,328 INFO Watching for file changes with StatReloader
+2024-05-06 21:43:10,420 WARNING Not Found: /
+2024-05-06 21:46:27,399 WARNING Not Found: /images/RobloxScreenShot20230831_175035086.png
+2024-05-06 21:46:27,423 WARNING Not Found: /images/RobloxScreenShot20230826_005508502.png
+2024-05-06 21:46:39,521 WARNING Not Found: /images/RobloxScreenShot20230831_175035086.png
+2024-05-06 21:55:29,792 WARNING Not Found: /images/418f6a867ae0668c8db76407637bc11a_P1G3ley.jpg
+2024-05-06 21:55:29,804 WARNING Not Found: /images/chart_5.png
+2024-05-06 21:56:55,524 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-06 21:56:57,838 INFO Watching for file changes with StatReloader
+2024-05-06 21:57:29,408 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-06 21:57:30,360 INFO Watching for file changes with StatReloader
+2024-05-06 22:05:54,691 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-06 22:05:55,862 INFO Watching for file changes with StatReloader
+2024-05-06 22:05:59,777 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-06 22:06:01,539 INFO Watching for file changes with StatReloader
+2024-05-06 22:06:03,457 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-06 22:06:04,683 INFO Watching for file changes with StatReloader
+2024-05-06 22:06:06,766 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-06 22:06:07,934 INFO Watching for file changes with StatReloader
+2024-05-06 22:06:21,146 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-06 22:06:22,054 INFO Watching for file changes with StatReloader
+2024-05-07 01:51:35,937 WARNING Not Found: /about/{company_info.pic.url}
+2024-05-07 01:52:13,668 WARNING Not Found: /about/{company_info.pic.url}
+2024-05-07 01:52:48,215 WARNING Not Found: /about/{company_info.pic.url}
+2024-05-07 01:54:59,221 WARNING Not Found: /about/{company_info.logo.url}
+2024-05-07 01:59:05,111 WARNING Not Found: /about/{company_info.logo.url}
+2024-05-07 02:02:40,649 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\settings.py changed, reloading.
+2024-05-07 02:02:42,831 INFO Watching for file changes with StatReloader
+2024-05-07 02:02:44,527 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\settings.py changed, reloading.
+2024-05-07 02:04:09,817 INFO Watching for file changes with StatReloader
+2024-05-07 02:04:12,053 WARNING Not Found: /
+2024-05-07 02:04:25,067 WARNING Not Found: /about/{company_info.logo.url}
+2024-05-07 02:05:00,888 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\settings.py changed, reloading.
+2024-05-07 02:05:02,001 INFO Watching for file changes with StatReloader
+2024-05-07 02:05:04,753 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\settings.py changed, reloading.
+2024-05-07 02:05:05,613 INFO Watching for file changes with StatReloader
+2024-05-07 02:05:08,434 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\settings.py changed, reloading.
+2024-05-07 02:05:09,280 INFO Watching for file changes with StatReloader
+2024-05-07 02:05:11,862 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\settings.py changed, reloading.
+2024-05-07 02:05:12,693 INFO Watching for file changes with StatReloader
+2024-05-07 02:05:19,120 WARNING Not Found: /about/{company_info.logo.url}
+2024-05-07 02:05:21,179 WARNING Not Found: /about/{company_info.logo.url}
+2024-05-07 02:05:44,057 WARNING Not Found: /about/{company_info.logo.url}
+2024-05-07 02:06:44,926 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\settings.py changed, reloading.
+2024-05-07 02:06:45,930 INFO Watching for file changes with StatReloader
+2024-05-07 02:06:49,798 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\settings.py changed, reloading.
+2024-05-07 02:06:50,723 INFO Watching for file changes with StatReloader
+2024-05-07 02:07:02,580 WARNING Not Found: /about/{company_info.logo.url}
+2024-05-07 02:09:14,885 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 02:09:15,860 INFO Watching for file changes with StatReloader
+2024-05-07 02:09:19,721 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 02:09:20,648 INFO Watching for file changes with StatReloader
+2024-05-07 02:09:27,505 WARNING Not Found: /about/{company_info.logo.url}
+2024-05-07 02:09:30,094 WARNING Not Found: /about/{company_info.logo.url}
+2024-05-07 02:09:30,400 WARNING Not Found: /about/{company_info.logo.url}
+2024-05-07 02:10:10,981 WARNING Not Found: /about/{company_info.logo.url}
+2024-05-07 02:35:32,507 WARNING Not Found: /discount
+2024-05-07 02:35:46,048 WARNING Not Found: /promocode
+2024-05-07 02:36:02,777 ERROR Internal Server Error: /promocodes/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 19, in promocodes
+    return render(request, 'promocodes.html', {'promocodes': promocodes})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: promocodes.html
+2024-05-07 02:36:26,763 ERROR Internal Server Error: /promocodes/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 19, in promocodes
+    return render(request, 'promocodes.html', {'promocodes': promocodes})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: promocodes.html
+2024-05-07 02:36:52,022 ERROR Internal Server Error: /promocodes/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 19, in promocodes
+    return render(request, 'promocodes.html', {'promocodes': promocodes})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: promocodes.html
+2024-05-07 02:37:52,494 ERROR Internal Server Error: /promocodes/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 19, in promocodes
+    return render(request, 'promocodes.html', {'promocodes': promocodes})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: promocodes.html
+2024-05-07 02:38:43,912 ERROR Internal Server Error: /promocodes/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 19, in promocodes
+    return render(request, 'promocodes.html', {'promocodes': promocodes})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: promocodes.html
+2024-05-07 02:38:49,417 WARNING Not Found: /privatice
+2024-05-07 02:39:00,933 WARNING Not Found: /privacy
+2024-05-07 02:39:47,806 ERROR Internal Server Error: /promocodes/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 19, in promocodes
+    return render(request, 'promocodes.html', {'promocodes': promocodes})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: promocodes.html
+2024-05-07 02:39:48,206 ERROR Internal Server Error: /promocodes/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 19, in promocodes
+    return render(request, 'promocodes.html', {'promocodes': promocodes})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: promocodes.html
+2024-05-07 02:39:52,756 ERROR Internal Server Error: /promocodes/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 19, in promocodes
+    return render(request, 'promocodes.html', {'promocodes': promocodes})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: promocodes.html
+2024-05-07 02:40:04,792 ERROR Internal Server Error: /promocodes/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 19, in promocodes
+    return render(request, 'promocodes.html', {'promocodes': promocodes})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: promocodes.html
+2024-05-07 17:29:37,111 ERROR Internal Server Error: /promocodes/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 19, in promocodes
+    return render(request, 'promocodes.html', {'promocodes': promocodes})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: promocodes.html
+2024-05-07 17:29:38,936 ERROR Internal Server Error: /promocodes/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 19, in promocodes
+    return render(request, 'promocodes.html', {'promocodes': promocodes})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: promocodes.html
+2024-05-07 17:30:09,923 INFO Watching for file changes with StatReloader
+2024-05-07 17:30:13,332 WARNING Not Found: /
+2024-05-07 20:45:49,537 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-07 20:45:50,712 INFO Watching for file changes with StatReloader
+2024-05-07 20:51:48,231 WARNING Not Found: /faqs
+2024-05-07 20:54:02,497 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 20:54:03,223 INFO Watching for file changes with StatReloader
+2024-05-07 21:14:51,891 WARNING Not Found: /vacancy
+2024-05-07 21:16:35,804 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\models.py changed, reloading.
+2024-05-07 21:16:36,938 INFO Watching for file changes with StatReloader
+2024-05-07 21:16:41,579 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\models.py changed, reloading.
+2024-05-07 21:16:44,083 INFO Watching for file changes with StatReloader
+2024-05-07 21:16:47,633 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\models.py changed, reloading.
+2024-05-07 21:16:48,303 INFO Watching for file changes with StatReloader
+2024-05-07 21:20:04,931 INFO Watching for file changes with StatReloader
+2024-05-07 21:20:06,682 WARNING Not Found: /
+2024-05-07 21:23:13,112 WARNING Not Found: /
+2024-05-07 21:23:33,279 WARNING Not Found: /
+2024-05-07 21:23:42,877 WARNING Not Found: /
+2024-05-07 21:35:54,697 WARNING Not Found: /
+2024-05-07 21:36:05,853 ERROR Internal Server Error: /reviews/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 35, in reviews
+    return render(request, 'reviews.html', {'reviews': reviews})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'add_review' not found. 'add_review' is not a valid view function or pattern name.
+2024-05-07 22:06:10,041 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:06:12,450 INFO Watching for file changes with StatReloader
+2024-05-07 22:06:15,546 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:06:16,679 INFO Watching for file changes with StatReloader
+2024-05-07 22:06:20,869 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:06:21,990 INFO Watching for file changes with StatReloader
+2024-05-07 22:06:40,391 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:06:41,531 INFO Watching for file changes with StatReloader
+2024-05-07 22:06:46,769 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:06:48,019 INFO Watching for file changes with StatReloader
+2024-05-07 22:06:52,189 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:06:53,426 INFO Watching for file changes with StatReloader
+2024-05-07 22:06:59,867 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:07:01,182 INFO Watching for file changes with StatReloader
+2024-05-07 22:07:10,845 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:07:12,018 INFO Watching for file changes with StatReloader
+2024-05-07 22:07:14,112 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:07:15,201 INFO Watching for file changes with StatReloader
+2024-05-07 22:07:18,314 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:07:19,500 INFO Watching for file changes with StatReloader
+2024-05-07 22:07:26,890 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:07:28,166 INFO Watching for file changes with StatReloader
+2024-05-07 22:07:30,393 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:07:31,532 INFO Watching for file changes with StatReloader
+2024-05-07 22:07:33,471 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:07:34,533 INFO Watching for file changes with StatReloader
+2024-05-07 22:07:36,490 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:07:37,709 INFO Watching for file changes with StatReloader
+2024-05-07 22:07:39,606 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:07:40,839 INFO Watching for file changes with StatReloader
+2024-05-07 22:07:46,135 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:07:47,312 INFO Watching for file changes with StatReloader
+2024-05-07 22:07:49,334 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:07:50,329 INFO Watching for file changes with StatReloader
+2024-05-07 22:07:55,570 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:07:56,744 INFO Watching for file changes with StatReloader
+2024-05-07 22:07:58,696 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:08:00,000 INFO Watching for file changes with StatReloader
+2024-05-07 22:08:02,113 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:08:03,419 INFO Watching for file changes with StatReloader
+2024-05-07 22:08:07,625 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:08:08,631 INFO Watching for file changes with StatReloader
+2024-05-07 22:08:14,975 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:08:16,144 INFO Watching for file changes with StatReloader
+2024-05-07 22:08:18,122 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:08:19,254 INFO Watching for file changes with StatReloader
+2024-05-07 22:08:21,291 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:08:22,427 INFO Watching for file changes with StatReloader
+2024-05-07 22:08:25,429 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:08:26,610 INFO Watching for file changes with StatReloader
+2024-05-07 22:08:33,135 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:08:34,246 INFO Watching for file changes with StatReloader
+2024-05-07 22:08:36,177 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:08:37,301 INFO Watching for file changes with StatReloader
+2024-05-07 22:08:51,395 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:08:52,447 INFO Watching for file changes with StatReloader
+2024-05-07 22:08:59,961 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:09:01,131 INFO Watching for file changes with StatReloader
+2024-05-07 22:09:03,072 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:09:04,106 INFO Watching for file changes with StatReloader
+2024-05-07 22:09:06,025 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:09:07,227 INFO Watching for file changes with StatReloader
+2024-05-07 22:09:11,375 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:09:12,580 INFO Watching for file changes with StatReloader
+2024-05-07 22:09:15,737 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:09:16,958 INFO Watching for file changes with StatReloader
+2024-05-07 22:09:19,033 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:09:20,281 INFO Watching for file changes with StatReloader
+2024-05-07 22:09:22,264 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:09:23,410 INFO Watching for file changes with StatReloader
+2024-05-07 22:09:26,566 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:09:27,755 INFO Watching for file changes with StatReloader
+2024-05-07 22:09:29,692 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-07 22:09:30,873 INFO Watching for file changes with StatReloader
+2024-05-09 11:15:59,261 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-09 11:16:01,713 INFO Watching for file changes with StatReloader
+2024-05-09 11:16:37,204 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-09 11:16:38,405 INFO Watching for file changes with StatReloader
+2024-05-09 11:16:40,382 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-09 11:16:41,519 INFO Watching for file changes with StatReloader
+2024-05-09 11:16:44,277 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-09 11:16:45,199 INFO Watching for file changes with StatReloader
+2024-05-09 11:17:51,828 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:17:52,715 INFO Watching for file changes with StatReloader
+2024-05-09 11:20:16,829 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:20:17,825 INFO Watching for file changes with StatReloader
+2024-05-09 11:20:19,520 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:20:20,537 INFO Watching for file changes with StatReloader
+2024-05-09 11:20:24,979 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:20:25,767 INFO Watching for file changes with StatReloader
+2024-05-09 11:20:33,807 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:20:34,718 INFO Watching for file changes with StatReloader
+2024-05-09 11:20:37,048 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:20:37,998 INFO Watching for file changes with StatReloader
+2024-05-09 11:20:46,192 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:20:47,365 INFO Watching for file changes with StatReloader
+2024-05-09 11:20:49,330 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:20:50,617 INFO Watching for file changes with StatReloader
+2024-05-09 11:20:56,856 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:20:58,066 INFO Watching for file changes with StatReloader
+2024-05-09 11:21:47,891 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:21:49,121 INFO Watching for file changes with StatReloader
+2024-05-09 11:22:24,896 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:22:26,030 INFO Watching for file changes with StatReloader
+2024-05-09 11:22:41,280 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:22:42,305 INFO Watching for file changes with StatReloader
+2024-05-09 11:22:43,596 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:22:44,490 INFO Watching for file changes with StatReloader
+2024-05-09 11:23:13,301 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:23:14,316 INFO Watching for file changes with StatReloader
+2024-05-09 11:23:28,247 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:23:29,175 INFO Watching for file changes with StatReloader
+2024-05-09 11:23:48,383 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:23:49,368 INFO Watching for file changes with StatReloader
+2024-05-09 11:23:51,799 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:23:53,265 INFO Watching for file changes with StatReloader
+2024-05-09 11:24:09,166 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:24:10,185 INFO Watching for file changes with StatReloader
+2024-05-09 11:24:12,016 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:24:12,954 INFO Watching for file changes with StatReloader
+2024-05-09 11:24:17,834 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:24:18,810 INFO Watching for file changes with StatReloader
+2024-05-09 11:24:20,615 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:24:21,698 INFO Watching for file changes with StatReloader
+2024-05-09 11:24:23,573 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:24:24,618 INFO Watching for file changes with StatReloader
+2024-05-09 11:24:27,434 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:24:28,369 INFO Watching for file changes with StatReloader
+2024-05-09 11:24:31,109 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:24:32,071 INFO Watching for file changes with StatReloader
+2024-05-09 11:24:38,837 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:24:39,890 INFO Watching for file changes with StatReloader
+2024-05-09 11:26:22,432 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\settings.py changed, reloading.
+2024-05-09 11:31:12,530 INFO Watching for file changes with StatReloader
+2024-05-09 11:32:09,302 INFO Watching for file changes with StatReloader
+2024-05-09 11:32:12,710 WARNING Not Found: /
+2024-05-09 11:43:53,109 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:43:54,390 INFO Watching for file changes with StatReloader
+2024-05-09 11:45:14,106 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:45:15,207 INFO Watching for file changes with StatReloader
+2024-05-09 11:49:24,155 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:49:25,107 INFO Watching for file changes with StatReloader
+2024-05-09 11:50:17,781 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:50:18,748 INFO Watching for file changes with StatReloader
+2024-05-09 11:50:21,474 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 11:50:22,519 INFO Watching for file changes with StatReloader
+2024-05-09 11:51:36,063 INFO User LOGIN
+2024-05-09 11:51:40,112 WARNING Not Found: /
+2024-05-09 11:51:50,897 INFO User LOGIN
+2024-05-09 11:53:19,696 INFO User LOGIN
+2024-05-09 11:58:25,220 WARNING Registration form is invalid
+2024-05-09 11:58:52,647 INFO Registration form has no errors
+2024-05-09 11:58:54,521 ERROR Internal Server Error: /register/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 62, in post
+    logging.info(f"{user.username} REGISTER (status: {user.status}) | user's Timezone: {request.user.timezone}")
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'timezone'
+2024-05-09 11:59:05,454 INFO User LOGIN
+2024-05-09 12:09:10,505 ERROR Internal Server Error: /logout/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 84, in get
+    logging.info(f"{request.user.username} LOGOUT (status: {request.user.status}) | user's Timezone: {request.user.timezone}")
+                                                            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'status'
+2024-05-09 12:12:13,711 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 12:12:15,821 INFO Watching for file changes with StatReloader
+2024-05-09 12:12:19,625 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 12:12:20,756 INFO Watching for file changes with StatReloader
+2024-05-09 12:12:27,207 ERROR Internal Server Error: /logout/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 84, in get
+    logging.info(f"{request.user.username} LOGOUT (status: {request.user.status}) | user's Timezone: {request.user.timezone}")
+                                                            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'status'
+2024-05-09 12:14:29,459 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 12:14:30,508 INFO Watching for file changes with StatReloader
+2024-05-09 12:14:33,299 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 12:14:34,310 INFO Watching for file changes with StatReloader
+2024-05-09 12:14:36,603 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 12:14:37,533 INFO Watching for file changes with StatReloader
+2024-05-09 12:14:40,280 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 12:14:41,227 INFO Watching for file changes with StatReloader
+2024-05-09 12:14:42,529 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 12:14:43,499 INFO Watching for file changes with StatReloader
+2024-05-09 12:14:47,294 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 12:14:48,226 INFO Watching for file changes with StatReloader
+2024-05-09 12:15:56,143 WARNING Not Found: /
+2024-05-09 12:16:02,161 INFO User LOGIN
+2024-05-09 12:20:25,238 INFO User LOGIN
+2024-05-09 12:20:29,576 ERROR Internal Server Error: /logout/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 84, in get
+    logging.info(f"{request.user.username} LOGOUT (status: {request.user.status}) | user's Timezone: {request.user.timezone}")
+                                                            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'status'
+2024-05-09 12:25:09,193 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\settings.py changed, reloading.
+2024-05-09 12:25:10,433 INFO Watching for file changes with StatReloader
+2024-05-09 12:25:14,249 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\settings.py changed, reloading.
+2024-05-09 12:25:15,257 INFO Watching for file changes with StatReloader
+2024-05-09 12:25:16,688 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\settings.py changed, reloading.
+2024-05-09 12:25:17,745 INFO Watching for file changes with StatReloader
+2024-05-09 12:25:23,366 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\settings.py changed, reloading.
+2024-05-09 12:25:24,317 INFO Watching for file changes with StatReloader
+2024-05-09 12:25:28,002 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\settings.py changed, reloading.
+2024-05-09 12:25:28,972 INFO Watching for file changes with StatReloader
+2024-05-09 12:25:33,991 WARNING Not Found: /
+2024-05-09 12:27:11,595 INFO User LOGIN
+2024-05-09 12:27:19,166 INFO User LOGIN
+2024-05-09 12:27:22,515 ERROR Internal Server Error: /logout/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 84, in get
+    logging.info(f"{request.user.username} LOGOUT (status: {request.user.status}) | user's Timezone: {request.user.timezone}")
+                                                                                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'timezone'
+2024-05-09 12:28:19,740 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\models.py changed, reloading.
+2024-05-09 12:28:20,762 INFO Watching for file changes with StatReloader
+2024-05-09 12:28:22,718 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\models.py changed, reloading.
+2024-05-09 12:28:23,687 INFO Watching for file changes with StatReloader
+2024-05-09 12:28:34,143 INFO ctoooooop LOGOUT (status: client) | user's Timezone: Europe/Moscow
+2024-05-09 12:35:57,915 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 12:35:59,312 INFO Watching for file changes with StatReloader
+2024-05-09 14:06:41,125 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 14:06:44,011 INFO Watching for file changes with StatReloader
+2024-05-09 14:06:47,230 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 14:06:48,850 INFO Watching for file changes with StatReloader
+2024-05-09 14:06:52,216 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 14:06:53,762 INFO Watching for file changes with StatReloader
+2024-05-09 14:07:02,474 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 14:07:03,804 INFO Watching for file changes with StatReloader
+2024-05-09 14:07:06,776 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 14:07:08,317 INFO Watching for file changes with StatReloader
+2024-05-09 14:12:04,037 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 14:12:06,862 INFO Watching for file changes with StatReloader
+2024-05-09 14:12:36,466 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 14:12:37,919 INFO Watching for file changes with StatReloader
+2024-05-09 14:12:40,846 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 14:22:51,150 INFO Watching for file changes with StatReloader
+2024-05-09 14:23:07,557 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 14:23:08,952 INFO Watching for file changes with StatReloader
+2024-05-09 14:23:12,427 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 14:23:13,464 INFO Watching for file changes with StatReloader
+2024-05-09 14:23:23,417 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 14:23:24,727 INFO Watching for file changes with StatReloader
+2024-05-09 14:23:27,090 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 14:23:28,675 INFO Watching for file changes with StatReloader
+2024-05-09 14:23:31,933 WARNING Not Found: /
+2024-05-09 14:23:48,207 WARNING Not Found: /
+2024-05-09 14:35:13,918 INFO User LOGIN
+2024-05-09 14:35:27,735 INFO ctoooooop called ReviewCreateView (status: client) | user's Timezone: Europe/Moscow
+2024-05-09 14:35:54,165 INFO ReviewForm has no errors)
+2024-05-09 14:35:54,204 INFO Review 'Ну такое' was created by ctoooooop 
+2024-05-09 14:36:16,115 INFO User LOGIN
+2024-05-09 14:36:21,016 INFO ctoooooop LOGOUT (status: client) | user's Timezone: Europe/Moscow
+2024-05-09 14:36:57,399 INFO User LOGIN
+2024-05-09 14:37:11,585 INFO ctoooooop called ReviewCreateView (status: client) | user's Timezone: Europe/Moscow
+2024-05-09 14:37:22,622 INFO ReviewForm has no errors)
+2024-05-09 14:37:22,657 INFO Review 'hkhjk' was created by ctoooooop 
+2024-05-09 15:42:59,311 INFO Watching for file changes with StatReloader
+2024-05-09 15:43:33,638 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-09 15:43:34,536 INFO Watching for file changes with StatReloader
+2024-05-09 15:43:38,283 WARNING Not Found: /
+2024-05-09 15:43:53,611 ERROR Internal Server Error: /medicine/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 144, in get
+    return JsonResponse(data_list, safe=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\http\response.py", line 733, in __init__
+    data = json.dumps(data, cls=encoder, **json_dumps_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\serializers\json.py", line 106, in default
+    return super().default(o)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ImageFieldFile is not JSON serializable
+2024-05-09 15:44:15,100 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 15:44:16,219 INFO Watching for file changes with StatReloader
+2024-05-09 15:44:19,650 ERROR Internal Server Error: /medicine/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 144, in get
+    return JsonResponse(data_list, safe=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\http\response.py", line 733, in __init__
+    data = json.dumps(data, cls=encoder, **json_dumps_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\serializers\json.py", line 106, in default
+    return super().default(o)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Categories is not JSON serializable
+2024-05-09 15:44:30,121 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 15:44:31,564 INFO Watching for file changes with StatReloader
+2024-05-09 15:44:33,397 ERROR Internal Server Error: /medicine/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 144, in get
+    return JsonResponse(data_list, safe=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\http\response.py", line 733, in __init__
+    data = json.dumps(data, cls=encoder, **json_dumps_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\serializers\json.py", line 106, in default
+    return super().default(o)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Supplier is not JSON serializable
+2024-05-09 15:44:39,682 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 15:44:40,798 INFO Watching for file changes with StatReloader
+2024-05-09 15:45:25,103 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 15:45:26,858 INFO Watching for file changes with StatReloader
+2024-05-09 15:50:38,504 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 15:50:39,649 INFO Watching for file changes with StatReloader
+2024-05-09 15:50:41,682 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 15:50:42,600 INFO Watching for file changes with StatReloader
+2024-05-09 15:51:11,880 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 15:51:12,842 INFO Watching for file changes with StatReloader
+2024-05-09 15:51:14,803 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 15:51:15,713 INFO Watching for file changes with StatReloader
+2024-05-09 15:51:18,733 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 15:51:19,875 INFO Watching for file changes with StatReloader
+2024-05-09 15:51:22,804 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 15:51:23,927 INFO Watching for file changes with StatReloader
+2024-05-09 15:51:44,929 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 15:51:45,951 INFO Watching for file changes with StatReloader
+2024-05-09 15:51:47,877 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 15:51:48,818 INFO Watching for file changes with StatReloader
+2024-05-09 15:53:41,220 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 15:53:42,778 INFO Watching for file changes with StatReloader
+2024-05-09 16:01:19,484 WARNING Not Found: /
+2024-05-09 18:42:13,799 WARNING Not Found: /medicine/min_cost
+2024-05-09 18:43:10,210 ERROR Internal Server Error: /medicine/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 130, in get
+    medics = self.filter_medic(min_cost, max_cost)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 153, in filter_medic
+    filtered = medic.filter(price__gte=min, price__lte=max)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 1613, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 1645, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 1495, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 1307, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 1772, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'price' into field. Choices are: categories, categories_id, code, cost, departments, description, id, instructions, items, name, photo, supplier, suppliers, suppliers_id, supply
+2024-05-09 18:43:48,301 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 18:43:50,819 INFO Watching for file changes with StatReloader
+2024-05-09 18:43:54,950 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 18:43:56,243 INFO Watching for file changes with StatReloader
+2024-05-09 18:44:00,350 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 18:44:01,374 INFO Watching for file changes with StatReloader
+2024-05-09 18:44:13,390 ERROR Internal Server Error: /medicine/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 130, in get
+    medics = self.filter_medic(min_cost, max_cost)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 153, in filter_medic
+    filtered = medic.filter(cost__gte=min, price__lte=max)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 1613, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 1645, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 1495, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 1307, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 1772, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'price' into field. Choices are: categories, categories_id, code, cost, departments, description, id, instructions, items, name, photo, supplier, suppliers, suppliers_id, supply
+2024-05-09 18:44:19,613 ERROR Internal Server Error: /medicine/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 130, in get
+    medics = self.filter_medic(min_cost, max_cost)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 153, in filter_medic
+    filtered = medic.filter(cost__gte=min, price__lte=max)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 1613, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 1645, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 1495, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 1307, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 1772, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'price' into field. Choices are: categories, categories_id, code, cost, departments, description, id, instructions, items, name, photo, supplier, suppliers, suppliers_id, supply
+2024-05-09 18:46:24,585 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 18:46:26,180 INFO Watching for file changes with StatReloader
+2024-05-09 18:46:41,966 ERROR Internal Server Error: /medicine/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 130, in get
+    medics = self.filter_medic(min_cost, max_cost)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 155, in filter_medic
+    filtered = medic.filter(costy__gte=min)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 1613, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 1645, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 1495, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 1307, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\sql\query.py", line 1772, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'costy' into field. Choices are: categories, categories_id, code, cost, departments, description, id, instructions, items, name, photo, supplier, suppliers, suppliers_id, supply
+2024-05-09 18:46:57,769 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 18:46:59,591 INFO Watching for file changes with StatReloader
+2024-05-09 20:39:42,881 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-09 20:39:44,249 INFO Watching for file changes with StatReloader
+2024-05-09 20:39:47,740 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-09 20:39:48,424 INFO Watching for file changes with StatReloader
+2024-05-09 20:42:44,087 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-09 20:42:44,742 INFO Watching for file changes with StatReloader
+2024-05-09 20:42:45,957 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-09 20:42:46,672 INFO Watching for file changes with StatReloader
+2024-05-09 20:42:47,883 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-09 20:42:48,556 INFO Watching for file changes with StatReloader
+2024-05-09 20:42:56,975 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-09 20:42:57,596 INFO Watching for file changes with StatReloader
+2024-05-09 20:42:59,869 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-09 20:43:00,557 INFO Watching for file changes with StatReloader
+2024-05-09 20:43:01,767 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-09 20:43:02,357 INFO Watching for file changes with StatReloader
+2024-05-09 20:43:14,859 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:43:15,515 INFO Watching for file changes with StatReloader
+2024-05-09 20:50:40,582 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:50:41,562 INFO Watching for file changes with StatReloader
+2024-05-09 20:50:45,126 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:50:46,633 INFO Watching for file changes with StatReloader
+2024-05-09 20:51:16,317 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:51:17,697 INFO Watching for file changes with StatReloader
+2024-05-09 20:51:19,226 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:51:20,453 INFO Watching for file changes with StatReloader
+2024-05-09 20:51:22,841 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:51:24,147 INFO Watching for file changes with StatReloader
+2024-05-09 20:51:36,892 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:51:38,465 INFO Watching for file changes with StatReloader
+2024-05-09 20:51:51,661 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:51:52,949 INFO Watching for file changes with StatReloader
+2024-05-09 20:51:58,912 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:51:59,953 INFO Watching for file changes with StatReloader
+2024-05-09 20:52:02,287 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:52:03,261 INFO Watching for file changes with StatReloader
+2024-05-09 20:52:05,610 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:52:06,543 INFO Watching for file changes with StatReloader
+2024-05-09 20:52:09,491 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:52:10,844 INFO Watching for file changes with StatReloader
+2024-05-09 20:52:19,499 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:52:20,509 INFO Watching for file changes with StatReloader
+2024-05-09 20:52:22,284 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:52:23,306 INFO Watching for file changes with StatReloader
+2024-05-09 20:52:25,354 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:52:26,413 INFO Watching for file changes with StatReloader
+2024-05-09 20:52:32,430 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:52:33,527 INFO Watching for file changes with StatReloader
+2024-05-09 20:52:35,423 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:52:36,387 INFO Watching for file changes with StatReloader
+2024-05-09 20:52:38,107 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:52:39,471 INFO Watching for file changes with StatReloader
+2024-05-09 20:52:42,955 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:52:44,139 INFO Watching for file changes with StatReloader
+2024-05-09 20:52:46,045 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:52:47,155 INFO Watching for file changes with StatReloader
+2024-05-09 20:52:49,381 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:52:50,364 INFO Watching for file changes with StatReloader
+2024-05-09 20:52:54,255 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:52:55,268 INFO Watching for file changes with StatReloader
+2024-05-09 20:53:05,632 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:53:06,628 INFO Watching for file changes with StatReloader
+2024-05-09 20:53:14,873 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:53:15,909 INFO Watching for file changes with StatReloader
+2024-05-09 20:53:17,674 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:53:18,689 INFO Watching for file changes with StatReloader
+2024-05-09 20:53:29,050 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:53:30,295 INFO Watching for file changes with StatReloader
+2024-05-09 20:53:39,563 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:53:40,553 INFO Watching for file changes with StatReloader
+2024-05-09 20:54:20,484 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:54:21,555 INFO Watching for file changes with StatReloader
+2024-05-09 20:54:22,910 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:54:24,002 INFO Watching for file changes with StatReloader
+2024-05-09 20:54:31,272 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:54:32,312 INFO Watching for file changes with StatReloader
+2024-05-09 20:54:34,089 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:54:35,260 INFO Watching for file changes with StatReloader
+2024-05-09 20:54:39,259 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:54:40,775 INFO Watching for file changes with StatReloader
+2024-05-09 20:57:13,034 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 20:57:14,470 INFO Watching for file changes with StatReloader
+2024-05-09 21:08:41,480 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-09 21:08:42,800 INFO Watching for file changes with StatReloader
+2024-05-09 21:09:09,971 WARNING Not Found: /medicine/
+2024-05-09 21:12:15,337 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\models.py changed, reloading.
+2024-05-09 21:12:16,531 INFO Watching for file changes with StatReloader
+2024-05-09 21:12:18,329 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\models.py changed, reloading.
+2024-05-09 21:12:19,615 INFO Watching for file changes with StatReloader
+2024-05-09 21:12:31,850 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\models.py changed, reloading.
+2024-05-09 21:12:33,456 INFO Watching for file changes with StatReloader
+2024-05-09 21:13:08,400 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\models.py changed, reloading.
+2024-05-09 21:13:09,648 INFO Watching for file changes with StatReloader
+2024-05-09 21:13:11,518 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\models.py changed, reloading.
+2024-05-09 21:13:12,486 INFO Watching for file changes with StatReloader
+2024-05-09 21:14:53,610 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\models.py changed, reloading.
+2024-05-09 21:14:57,235 INFO Watching for file changes with StatReloader
+2024-05-09 21:15:01,075 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\models.py changed, reloading.
+2024-05-09 21:15:02,270 INFO Watching for file changes with StatReloader
+2024-05-09 21:15:05,183 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\models.py changed, reloading.
+2024-05-09 21:15:06,126 INFO Watching for file changes with StatReloader
+2024-05-09 21:15:22,940 INFO Watching for file changes with StatReloader
+2024-05-09 21:15:24,685 WARNING Not Found: /
+2024-05-09 21:18:15,341 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-09 21:18:16,483 INFO Watching for file changes with StatReloader
+2024-05-09 21:22:02,773 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 21:22:04,031 INFO Watching for file changes with StatReloader
+2024-05-09 21:22:06,506 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 21:22:07,598 INFO Watching for file changes with StatReloader
+2024-05-09 21:22:13,195 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 21:22:14,168 INFO Watching for file changes with StatReloader
+2024-05-09 21:22:40,206 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 21:22:41,882 INFO Watching for file changes with StatReloader
+2024-05-09 21:22:44,220 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 21:22:45,651 INFO Watching for file changes with StatReloader
+2024-05-09 21:22:50,719 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 21:22:52,173 INFO Watching for file changes with StatReloader
+2024-05-09 21:28:38,092 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 21:28:39,247 INFO Watching for file changes with StatReloader
+2024-05-09 21:30:46,212 WARNING Not Found: /medicine/
+2024-05-09 21:31:54,014 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-09 21:31:56,866 INFO Watching for file changes with StatReloader
+2024-05-09 21:31:59,281 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-09 21:32:00,741 INFO Watching for file changes with StatReloader
+2024-05-09 21:32:01,169 WARNING Not Found: /
+2024-05-09 21:32:06,011 WARNING Not Found: /medicine/
+2024-05-09 21:36:56,555 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 21:36:57,931 INFO Watching for file changes with StatReloader
+2024-05-09 21:36:59,382 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-09 21:37:00,926 INFO Watching for file changes with StatReloader
+2024-05-09 21:37:18,020 WARNING Not Found: /
+2024-05-09 21:37:28,809 WARNING Not Found: /medicines/1
+2024-05-09 21:41:01,021 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-09 21:41:02,278 INFO Watching for file changes with StatReloader
+2024-05-09 21:41:05,541 WARNING Not Found: /
+2024-05-09 21:41:05,710 WARNING Not Found: /
+2024-05-09 21:43:36,849 ERROR Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 421, in login
+    **self.each_context(request),
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 335, in each_context
+    "available_apps": self.get_app_list(request),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 537, in get_app_list
+    app_dict = self._build_app_dict(request, app_label)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 479, in _build_app_dict
+    has_module_perms = model_admin.has_module_permission(request)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\options.py", line 638, in has_module_permission
+    return request.user.has_module_perms(self.opts.app_label)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\models.py", line 331, in has_module_perms
+    return _user_has_module_perms(self, app_label)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\models.py", line 235, in _user_has_module_perms
+    if backend.has_module_perms(user, app_label):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 117, in has_module_perms
+    for perm in self.get_all_permissions(user_obj)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 105, in get_all_permissions
+    user_obj._perm_cache = super().get_all_permissions(user_obj)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 23, in get_all_permissions
+    *self.get_user_permissions(user_obj, obj=obj),
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 92, in get_user_permissions
+    return self._get_permissions(user_obj, obj, "user")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 80, in _get_permissions
+    perms = getattr(self, "_get_%s_permissions" % from_name)(user_obj)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 59, in _get_user_permissions
+    return user_obj.user_permissions.all()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'all'
+2024-05-09 21:43:42,134 ERROR Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 421, in login
+    **self.each_context(request),
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 335, in each_context
+    "available_apps": self.get_app_list(request),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 537, in get_app_list
+    app_dict = self._build_app_dict(request, app_label)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 479, in _build_app_dict
+    has_module_perms = model_admin.has_module_permission(request)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\options.py", line 638, in has_module_permission
+    return request.user.has_module_perms(self.opts.app_label)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\models.py", line 331, in has_module_perms
+    return _user_has_module_perms(self, app_label)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\models.py", line 235, in _user_has_module_perms
+    if backend.has_module_perms(user, app_label):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 117, in has_module_perms
+    for perm in self.get_all_permissions(user_obj)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 105, in get_all_permissions
+    user_obj._perm_cache = super().get_all_permissions(user_obj)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 23, in get_all_permissions
+    *self.get_user_permissions(user_obj, obj=obj),
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 92, in get_user_permissions
+    return self._get_permissions(user_obj, obj, "user")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 80, in _get_permissions
+    perms = getattr(self, "_get_%s_permissions" % from_name)(user_obj)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 59, in _get_user_permissions
+    return user_obj.user_permissions.all()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'all'
+2024-05-09 21:43:48,096 ERROR Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 421, in login
+    **self.each_context(request),
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 335, in each_context
+    "available_apps": self.get_app_list(request),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 537, in get_app_list
+    app_dict = self._build_app_dict(request, app_label)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 479, in _build_app_dict
+    has_module_perms = model_admin.has_module_permission(request)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\options.py", line 638, in has_module_permission
+    return request.user.has_module_perms(self.opts.app_label)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\models.py", line 331, in has_module_perms
+    return _user_has_module_perms(self, app_label)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\models.py", line 235, in _user_has_module_perms
+    if backend.has_module_perms(user, app_label):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 117, in has_module_perms
+    for perm in self.get_all_permissions(user_obj)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 105, in get_all_permissions
+    user_obj._perm_cache = super().get_all_permissions(user_obj)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 23, in get_all_permissions
+    *self.get_user_permissions(user_obj, obj=obj),
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 92, in get_user_permissions
+    return self._get_permissions(user_obj, obj, "user")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 80, in _get_permissions
+    perms = getattr(self, "_get_%s_permissions" % from_name)(user_obj)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 59, in _get_user_permissions
+    return user_obj.user_permissions.all()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'all'
+2024-05-09 21:44:12,791 ERROR Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 421, in login
+    **self.each_context(request),
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 335, in each_context
+    "available_apps": self.get_app_list(request),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 537, in get_app_list
+    app_dict = self._build_app_dict(request, app_label)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 479, in _build_app_dict
+    has_module_perms = model_admin.has_module_permission(request)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\options.py", line 638, in has_module_permission
+    return request.user.has_module_perms(self.opts.app_label)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\models.py", line 331, in has_module_perms
+    return _user_has_module_perms(self, app_label)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\models.py", line 235, in _user_has_module_perms
+    if backend.has_module_perms(user, app_label):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 117, in has_module_perms
+    for perm in self.get_all_permissions(user_obj)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 105, in get_all_permissions
+    user_obj._perm_cache = super().get_all_permissions(user_obj)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 23, in get_all_permissions
+    *self.get_user_permissions(user_obj, obj=obj),
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 92, in get_user_permissions
+    return self._get_permissions(user_obj, obj, "user")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 80, in _get_permissions
+    perms = getattr(self, "_get_%s_permissions" % from_name)(user_obj)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 59, in _get_user_permissions
+    return user_obj.user_permissions.all()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'all'
+2024-05-09 22:17:13,623 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-09 22:17:15,780 INFO Watching for file changes with StatReloader

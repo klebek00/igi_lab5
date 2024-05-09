@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Discounts</title>
+</head>
+<body>
+    <h2>Promocodes</h2>
+    {% for promo in promocodes %}
+        <div>
+            <h3>Скидка {{ promo.discount }}%</h3>
+            <p>Промокод <b>{{ promo.code }}</b></p>
+        </div>
+    {% endfor %}
+</body>
+</html>
