@@ -5,7 +5,8 @@ import re
 import logging
 import django.forms
 from django.urls import reverse
-
+from django.utils import timezone
+from datetime import time
 
 logging.basicConfig(level=logging.INFO, filename='logging.log', filemode='a', format='%(asctime)s %(levelname)s %(message)s')
 
@@ -81,33 +82,44 @@ class Medicines(models.Model):
         return self.name
     
 class Department(models.Model):
-    no = models.CharField(max_length=5)
-    medicines = models.ManyToManyField(Medicines, related_name='departments', blank=True)
+    no = models.CharField(max_length=255)
+    address = models.CharField(max_length=255)
+    open = models.TimeField(default='10:51:24.543425')
+    close = models.TimeField(default='10:51:24.543425')
+
     def __str__(self):
-        return self.no
+        return self.no    
     
+class DepartmentMedicine(models.Model):
+    department = models.ForeignKey(Department, on_delete=models.CASCADE)
+    medicine = models.ForeignKey(Medicines, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return f"{self.medicine.name} - {self.department.no} ({self.quantity})"
 
 class Sale(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, related_name='sale', on_delete=models.CASCADE)
     promocode = models.ForeignKey("Promocode", related_name='sale', on_delete=models.SET_NULL, null=True, blank=True)
     department = models.ForeignKey(Department, related_name="sale", on_delete=models.CASCADE)
-    def total_cost(self):
-        total_cost = sum(item.subtotal() for item in self.items.all())
-        if self.promocode:
-            total_cost -= total_cost * (self.promocode.discount / 100)  
-        return total_cost
-
-class SaleItem(models.Model):
-    sale = models.ForeignKey(Sale, on_delete=models.CASCADE, related_name='items')
     medicine = models.ForeignKey(Medicines, related_name="items", on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField()
-    discount = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    price = models.FloatField()
+    price_prom = models.FloatField()
+
+    def use_discount(self, promocode):
+        if UsedDiscounts.objects.filter(promocode_id=promocode, user_id=self.user).exists():
+            return
+        self.price_prom *= (100 - promocode.discount) / 100
+        self.save()
+
+        UsedDiscounts.objects.create(promocode=promocode, user=self.user)
 
     def subtotal(self):
         subtotal = self.quantity * self.medicine.cost
-        subtotal -= subtotal * (self.discount / 100)
         return subtotal
+
     
 class Promocode(models.Model):
     code = models.CharField(max_length=10)

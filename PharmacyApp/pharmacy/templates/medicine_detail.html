@@ -6,10 +6,24 @@
     <title>Детальная информация о лекарстве</title>
 </head>
 <body>
+    
     <h1>{{ medicine.name }}</h1>
+    <img src="{{ medicine.photo.url }}" height="180" width="300">
     <p>Код: {{ medicine.code }}</p>
     <p>Инструкции: {{ medicine.instructions }}</p>
     <p>Описание: {{ medicine.description }}</p>
     <p>Цена: {{ medicine.cost }} руб.</p>
+    <p>Поставщики: {{ suppliers.name }}</p>
+    <h2>Наличие в отделениях:</h2>
+    
+    <ul>
+        {% for department in departments %}
+            <li>
+                {{ department.department.no }} - 
+                В наличии: {{ department.quantity }}
+            </li>
+        {% endfor %}
+    </ul>
+
 </body>
 </html>

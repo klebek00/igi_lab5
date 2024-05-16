@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Новости</title>
+    <title>News</title>
 </head>
 <body>
-    <h1>News</h1>
+    <h1>Новости</h1>
     {% for new in news %}
         <div>
             <h2>{{ new.title }}</h2>
             <p>{{ new.content }}</p>
             <img src="{{ new.image.url }}">
-            <p>Posted: {{ new.date }}</p>
+            <p>Опубликованно: {{ new.date|date:"d.m.Y" }}&nbsp;{{ new.date|time:"H:i" }}</p>
         </div>
     {% endfor %}
 </body>

@@ -15,10 +15,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, re_path
-from pharmacy import views
+from django.urls import path, re_path, include
+from pharmacy import views, statistics
 from django.conf.urls.static import static
 from django.conf import settings
+
+user_patterns = [
+    re_path(r'orders', views.UserOrdersListView.as_view(), name='orders_list'),
+    re_path(r'order/(?P<jk>\d+)', views.UserOrderView.as_view(), name='user_order'),
+]
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,10 +39,32 @@ urlpatterns = [
     path('vacancies/', views.vacancies, name='vacancies'),
     path('reviews/', views.reviews, name='reviews'),
     path('review/create/', views.ReviewCreateView.as_view(), name='add_review'),
+    path('review/<int:review_id>/edit/', views.ReviewEditView.as_view(), name='edit_review'),
+    path('review/<int:review_id>/delete/', views.ReviewDeleteView.as_view(), name='delete_review'),
     path('promocodes/', views.promocodes, name="promocodes"),
     
     path('medicines/', views.MedicinesListView.as_view(), name='medicines'),
-    path('medicines/<int:pk>/', views.MedicinesDetailView.as_view(), name='medicine_detail'),    ]
+    path('medicines/<int:pk>/', views.MedicinesDetailView.as_view(), name='medicine_detail'),    
+
+    path('catigories/', views.CatigoriesListView.as_view(), name='catigories'),
+    path('departments/', views.DepartmentInfo.as_view(), name='departments'),
+
+    re_path(r'medicines/(?P<pk>\d+)/order/create/$', views.OrderCreateView.as_view(), name='create_order'),
+    re_path(r'user/(?P<pk>\d+)/', include(user_patterns)),
+
+    path('suppliers/', views.SupplierListView.as_view(), name='suppliers'),
+    path('orders/', views.OrderListView.as_view(), name='orders'),
+
+    path('clients', statistics.clients, name='clients'),
+    path('medic_stat', statistics.medicine, name='tours_stat'),
+
+    path('sales', statistics.sales, name='sales'),
+    path('revenue_chart', statistics.department_revenue_chart, name='department_revenue_chart'),
+    path('diagramm', statistics.class_diagramm, name='model_diagramm'),
+    
+    path('api/medical_facts/', views.MedicalFactsView.as_view(), name='medical_facts'),
+    path('api/rx/', views.RxView.as_view(), name='rx_search'),
+    ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

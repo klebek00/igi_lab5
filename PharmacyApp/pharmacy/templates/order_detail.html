@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Orders</title>
+</head>
+<body>
+    <h1>Заказ #{{order.id}}</h1>
+    <table border="1">
+        <tr>
+            <p>Дата: {{ order.date|date:"d.m.Y" }}</p> 
+            <p>Время: {{ order.date|time:"H:i" }}</p>
+            <p>Отделение: {{ order.department }}</p>
+            <p>Препарат: {{ order.medicine }}</p>
+            <p>Кол-во: {{ order.quantity }}</p>
+            <p>Цена: {{ order.price_prom }}</p>
+        </tr>
+    </table>
+</body>
+</html>

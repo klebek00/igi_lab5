@@ -12,7 +12,7 @@
             <p>{{ faq.question }}</p>
             <h2>Ответ</h2>
             <p>{{ faq.answer }}</p>
-            <p>спрашивает: {{ faq.date }}</p>
+            <p>Дата: {{ faq.date|date:"d.m.Y" }}</p>
         </div>
     {% endfor %}
 </body>

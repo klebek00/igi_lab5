@@ -7,7 +7,7 @@
     
     <h2>{{latest_article.title }}</h2>
     <p>{{ latest_article.content }}</p>
-    <p>Posted: {{ latest_article.date }}</p>
+    <p>Опубликованно: {{ latest_article.date|date:"d.m.Y" }}&nbsp;{{ latest_article.date|time:"H:i" }}</p>
     <img src="{{ latest_article.image.url }}">
 </body>
 </html>

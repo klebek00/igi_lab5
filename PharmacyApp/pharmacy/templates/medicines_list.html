@@ -6,10 +6,31 @@
     <title>Medicines List</title>
 </head>
 <body>
-    <h1>Лекарственные препораты</h1>
-    <ul>
-        {% for medicine in medicines %}
-        <div><a href="{% url 'medicine_detail' pk=medicine.id %}">{{ medicine.name }}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ medicine.cost }}руб.</div>        {% endfor %}
-    </ul>
+    <h1>Лекарственные препараты</h1>
+    <form action="{% url 'medicines' %}" method="get">
+        <label for="search">Поиск по названию:</label>
+        <input type="text" id="search" name="search">
+        <button type="submit">Найти</button>
+    </form>
+
+    <form action="{% url 'medicines' %}" method="get">
+        <label for="min_cost">Минимальная цена:</label>
+        <input type="text" id="min_cost" name="min_cost" value="{{ request.GET.min_cost|default_if_none:'0' }}">
+    
+        <label for="max_cost">Максимальная цена:</label>
+        <input type="text" id="max_cost" name="max_cost" value="{{ request.GET.max_cost|default_if_none:'1000' }}">
+    
+        <button type="submit">Найти</button>
+    </form>
+    
+    {% if no_results %}
+        <p>Товар отсутствует</p>
+    
+    {% else %}
+        <ul>
+            {% for medicine in medicines %}
+            <div><a href="{% url 'medicine_detail' pk=medicine.id %}">{{ medicine.name }}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ medicine.cost }}руб.</div>        {% endfor %}
+        </ul>
+    {% endif %}
 </body>
 </html>

@@ -1,7 +1,7 @@
 {% block content %}
 <form method="POST" novalidate>
     {% csrf_token %}
-    <center><h2>Sign Up</h2>
+    <center><h2>Регистрация</h2>
     {% for field in form %}
     <p>
         {% if field.errors %}
@@ -14,7 +14,7 @@
    <b><center>{{ field.label_tag }}</center></b> {{ field }}
  </p>
  {% endfor %}
- <button type="submit">Register</button>
- <p>Already have an account? <a href="{%url 'login' %}">Sign in</a></p></center>
+ <button type="submit">Зарегистрироваться</button>
+ <p>У вас есть аккаунт? <a href="{%url 'login' %}">Войти</a></p></center>
 </form>
 {% endblock content%}

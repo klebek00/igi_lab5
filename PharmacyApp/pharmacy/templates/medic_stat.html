@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tours</title>
+</head>
+<body>
+    <h1>Препараты</h1>
+    <h3>A-Я</h3>
+    {% for medic in medics %}
+        <p>{{ medic.name }}, Цена: {{ medic.cost }} руб.<p>
+    {% endfor %}
+    
+    <h3>Наиболее популярный: </h3> <p>{{ most_popular.medicine__name }}, Кол-во: {{ most_popular.order_count}}<p>
+</body>
+</html>

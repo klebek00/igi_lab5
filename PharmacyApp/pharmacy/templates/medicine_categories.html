@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories and Medicines</title>
+</head>
+<body>
+    <h1>Категории медикаментов</h1>
+    <ul>
+        {% for category in categories %}
+        <li>{{ category.name }}</li>
+        <ul>
+            {% for medicine in category.medicines.all %}
+            <li>{{ medicine.name }}</li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+    </ul>
+</body>
+</html>
