@@ -4,13 +4,13 @@
     <title>Contacts</title>
 </head>
 <body>
-    <h1>Контакты</h1>
+    <h1>Кантакты</h1>
     {% for contact in contacts %}
         <div>
             <img src="{{ contact.photo.url }}" height="180" width="180">
             <h2>{{ contact.user.first_name }} {{ contact.user.last_name}}</h2>
             <p>{{ contact.description }}</p>
-            <p>Phone: {{ contact.user.phone }}</p>
+            <p>Тэлефон: {{ contact.user.phone }}</p>
             <p>Email: {{ contact.user.email }}</p>
         </div>
     {% endfor %}

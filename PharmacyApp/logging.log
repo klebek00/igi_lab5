@@ -10546,3 +10546,233 @@ django.core.exceptions.ValidationError: ['Error while creating user (Check phone
 2024-05-16 17:41:52,075 WARNING 300 is greater than 3
 2024-05-16 17:41:52,089 INFO OrderForm has no errors
 2024-05-16 17:41:52,092 INFO Promocode MED103 used by userclient
+2024-05-16 20:07:26,372 INFO Watching for file changes with StatReloader
+2024-05-16 20:07:32,136 WARNING Not Found: /
+2024-05-16 20:11:28,275 WARNING Not Found: /
+2024-05-17 02:28:12,589 INFO Watching for file changes with StatReloader
+2024-05-17 02:28:15,700 WARNING Not Found: /
+2024-05-17 02:28:23,875 INFO User LOGIN
+2024-05-17 02:30:05,464 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\settings.py changed, reloading.
+2024-05-17 02:30:06,372 INFO Watching for file changes with StatReloader
+2024-05-17 02:30:16,856 WARNING Not Found: /
+2024-05-17 02:30:50,781 INFO User LOGIN
+2024-05-17 02:30:57,993 WARNING Not Found: /
+2024-05-17 02:31:02,137 ERROR Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 421, in login
+    **self.each_context(request),
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 335, in each_context
+    "available_apps": self.get_app_list(request),
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 537, in get_app_list
+    app_dict = self._build_app_dict(request, app_label)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\sites.py", line 479, in _build_app_dict
+    has_module_perms = model_admin.has_module_permission(request)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\admin\options.py", line 638, in has_module_permission
+    return request.user.has_module_perms(self.opts.app_label)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\models.py", line 331, in has_module_perms
+    return _user_has_module_perms(self, app_label)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\models.py", line 235, in _user_has_module_perms
+    if backend.has_module_perms(user, app_label):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 117, in has_module_perms
+    for perm in self.get_all_permissions(user_obj)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 105, in get_all_permissions
+    user_obj._perm_cache = super().get_all_permissions(user_obj)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 23, in get_all_permissions
+    *self.get_user_permissions(user_obj, obj=obj),
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 92, in get_user_permissions
+    return self._get_permissions(user_obj, obj, "user")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 80, in _get_permissions
+    perms = getattr(self, "_get_%s_permissions" % from_name)(user_obj)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\backends.py", line 59, in _get_user_permissions
+    return user_obj.user_permissions.all()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'all'
+2024-05-17 02:31:17,272 WARNING Not Found: /
+2024-05-17 02:32:19,588 WARNING Not Found: /
+2024-05-17 02:32:30,571 WARNING Not Found: /
+2024-05-17 02:35:37,943 WARNING Not Found: /
+2024-05-17 02:36:54,442 WARNING Not Found: /
+2024-05-17 02:37:18,940 WARNING Not Found: /
+2024-05-17 02:44:14,871 WARNING Not Found: /
+2024-05-17 02:44:34,554 WARNING Not Found: /
+2024-05-17 02:44:41,785 INFO first called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-17 02:44:42,066 INFO first called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-17 02:44:49,235 INFO first called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-17 02:44:50,738 WARNING Not Found: /
+2024-05-17 02:45:22,741 INFO first called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-17 02:45:27,976 INFO first called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-17 02:45:44,026 INFO OrderForm has no errors
+2024-05-17 02:45:44,073 INFO first called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-17 02:45:55,533 INFO first called UserOrderView | user's Timezone: Europe/Moscow
+2024-05-17 02:45:57,071 INFO first called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-17 02:45:59,520 INFO first called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-17 02:46:01,302 INFO first called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-17 02:46:11,541 INFO first LOGOUT (status: client) | user's Timezone: Europe/Moscow
+2024-05-17 02:46:30,302 INFO User LOGIN
+2024-05-17 02:46:34,631 WARNING Not Found: /
+2024-05-17 02:46:50,227 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-17 02:49:13,189 WARNING Not Found: /
+2024-05-17 02:49:39,236 INFO admin called OrderListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-17 02:49:57,961 WARNING Not Found: /
+2024-05-17 02:50:30,589 WARNING Not Found: /
+2024-05-17 02:50:49,330 WARNING Not Found: /
+2024-05-17 02:52:10,745 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-17 02:52:12,474 INFO Watching for file changes with StatReloader
+2024-05-17 02:52:30,403 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-17 02:52:31,190 INFO Watching for file changes with StatReloader
+2024-05-17 02:53:20,059 WARNING Not Found: /
+2024-05-17 02:53:38,921 WARNING Not Found: /
+2024-05-17 02:54:08,008 WARNING Not Found: /api/
+2024-05-17 02:54:36,799 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-17 02:57:20,582 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-17 02:57:22,708 INFO Watching for file changes with StatReloader
+2024-05-17 02:57:31,820 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-17 02:57:32,606 INFO Watching for file changes with StatReloader
+2024-05-17 02:57:35,147 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-17 02:57:35,967 INFO Watching for file changes with StatReloader
+2024-05-17 02:57:45,420 ERROR Internal Server Error: /medicines/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 193, in get
+    medics = medics.order_by('name')
+             ^^^^^^
+UnboundLocalError: cannot access local variable 'medics' where it is not associated with a value
+2024-05-17 02:58:00,276 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-17 02:58:01,112 INFO Watching for file changes with StatReloader
+2024-05-17 02:58:05,102 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-17 02:58:06,031 INFO Watching for file changes with StatReloader
+2024-05-17 02:58:18,602 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-17 02:58:19,558 INFO Watching for file changes with StatReloader
+2024-05-17 02:58:22,124 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-17 02:58:22,870 INFO Watching for file changes with StatReloader
+2024-05-17 02:58:30,690 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-17 02:58:31,710 INFO Watching for file changes with StatReloader
+2024-05-17 02:58:35,485 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-17 02:58:36,243 INFO Watching for file changes with StatReloader
+2024-05-17 03:01:18,487 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-17 03:02:00,515 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-17 03:02:01,310 INFO Watching for file changes with StatReloader
+2024-05-17 03:02:05,494 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-17 03:02:07,358 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-17 03:02:09,171 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-17 03:02:09,884 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-17 03:02:10,086 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-17 03:02:10,210 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-17 03:02:10,368 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-17 03:02:38,526 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\settings.py changed, reloading.
+2024-05-17 03:02:39,568 INFO Watching for file changes with StatReloader
+2024-05-17 03:10:04,605 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\settings.py changed, reloading.
+2024-05-17 03:10:06,126 INFO Watching for file changes with StatReloader
+2024-05-17 03:10:24,837 INFO User LOGIN
+2024-05-17 03:10:30,306 INFO first LOGOUT (status: client) | user's Timezone: Europe/Moscow
+2024-05-17 03:10:41,439 INFO User LOGIN
+2024-05-17 03:10:46,867 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-17 03:12:31,486 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\settings.py changed, reloading.
+2024-05-17 03:13:03,016 INFO Watching for file changes with StatReloader
+2024-05-17 03:18:56,824 ERROR Internal Server Error: /logout/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 171, in get
+    logging.info(f"{request.user.username} LOGOUT (status: {request.user.status}) | user's Timezone: {request.user.timezone}")
+                                                            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'status'
+2024-05-17 03:18:58,245 ERROR Internal Server Error: /logout/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 171, in get
+    logging.info(f"{request.user.username} LOGOUT (status: {request.user.status}) | user's Timezone: {request.user.timezone}")
+                                                            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\utils\functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'status'
+2024-05-17 03:19:05,338 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\settings.py changed, reloading.
+2024-05-17 03:19:06,279 INFO Watching for file changes with StatReloader
+2024-05-17 03:19:15,880 INFO User LOGIN
+2024-05-17 03:19:22,325 WARNING Not Found: /
+2024-05-17 03:20:14,110 WARNING Not Found: /
+2024-05-17 03:20:33,936 WARNING Not Found: /
+2024-05-17 03:21:11,747 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-17 03:21:13,735 INFO Watching for file changes with StatReloader
+2024-05-17 03:21:21,794 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-17 03:21:22,539 INFO Watching for file changes with StatReloader
+2024-05-17 03:21:48,837 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-17 03:21:49,622 INFO Watching for file changes with StatReloader
+2024-05-17 03:22:05,073 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-17 03:22:05,828 INFO Watching for file changes with StatReloader
+2024-05-17 03:22:08,369 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-17 03:22:09,248 INFO Watching for file changes with StatReloader
+2024-05-17 03:22:36,715 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-17 03:22:37,501 INFO Watching for file changes with StatReloader
+2024-05-17 03:22:40,161 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-17 03:22:40,955 INFO Watching for file changes with StatReloader
+2024-05-17 03:22:52,089 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-17 03:22:52,852 INFO Watching for file changes with StatReloader
+2024-05-17 03:22:56,377 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-17 03:22:57,168 INFO Watching for file changes with StatReloader
+2024-05-17 03:23:03,973 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-17 03:23:04,736 INFO Watching for file changes with StatReloader
+2024-05-17 03:23:14,775 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-17 03:23:15,718 INFO Watching for file changes with StatReloader
+2024-05-17 03:23:21,789 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-17 03:23:22,666 INFO Watching for file changes with StatReloader

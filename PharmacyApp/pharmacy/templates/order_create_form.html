@@ -1,9 +1,9 @@
-<h1>Ваш заказ</h1>
-<p>Наименование: {{ medic.name }}</p>
-<p>Цена: {{ medic.cost }} руб.</p>
+<h1>Ваш замова</h1>
+<p>Назва: {{ medic.name }}</p>
+<p>Кошт: {{ medic.cost }} руб.</p>
 
 <form method="post" action="{% url 'create_order' pk=medic.pk %}">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Заказать</button>
+    <button type="submit">Замовіць</button>
 </form>

@@ -5,12 +5,12 @@
     <title>FAQ</title>
 </head>
 <body>
-    <h1>Вопрос-Ответ</h1>
+    <h1>Пытанне-Адказ</h1>
     {% for faq in faqs %}
         <div>
-            <h2>Вопрос</h2>
+            <h2>Пытанне</h2>
             <p>{{ faq.question }}</p>
-            <h2>Ответ</h2>
+            <h2>Адказ</h2>
             <p>{{ faq.answer }}</p>
             <p>Дата: {{ faq.date|date:"d.m.Y" }}</p>
         </div>

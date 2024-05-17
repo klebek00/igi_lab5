@@ -100,8 +100,8 @@ def linear_sales_trend():
 
     plt.plot(years, sales, color='yellowgreen', marker='o', linestyle='-')
     plt.xlabel('Год')
-    plt.ylabel('Общая прибыль, руб')
-    plt.title('Продажи за год')
+    plt.ylabel('Агульная перавага, руб')
+    plt.title('Продажы за год')
     plt.xticks(years)
     plt.grid(True)
 
@@ -131,9 +131,9 @@ def year_sales_volume():
 
     plt.bar(years, sales, color=colors)
     plt.xlabel('Год')
-    plt.ylabel('Продажи, руб')
+    plt.ylabel('Продажы, руб')
     plt.xticks(years)
-    plt.title(f'Продажи за год - {years}')
+    plt.title(f'Продажы за год - {years}')
 
     fig = plt.gcf()
     buf = io.BytesIO()
@@ -168,9 +168,9 @@ def department_revenue_chart(request):
         values = data.values()
 
         plt.bar(labels, values, color = 'yellowgreen')
-        plt.xlabel('Отделения')
-        plt.ylabel('Прибыль')
-        plt.title(f'Прибыль за {current_year} год')
+        plt.xlabel('Аддзялення')
+        plt.ylabel('Перавага')
+        plt.title(f'Перавага у {current_year} годзе')
         plt.xticks(rotation=45)
         plt.tight_layout()
 

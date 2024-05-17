@@ -4,21 +4,21 @@
     <title>Clients</title>
 </head>
 <body>
-    <h1>Клиенты</h1>
+    <h1>Кліенты</h1>
     <h3>А-Я</h3>
     {% for client in clients%}
         <p><b>{{ client.first_name }} {{ client.last_name }}</b>, {{ client.age }} лет<p>
         <p>{{ client.address}}, {{ client.phone }}</p>
     {% endfor %}     
-    <h3>Средний возраст: {{ average_age }} лет</h3>
-    <h3>Медиана : {{ median_age }} лет</h3>
+    <h3>Сярэдні ўзрост: {{ average_age }} гадоў</h3>
+    <h3>Медыяна : {{ median_age }} гадоў</h3>
 
     {% for client in clients%}
         <p><b>{{ client.username }}</b><br/>
             {% for order in client.sale.all %}
                 <p><b>{{order.medicine.name}}</b></p> 
-                <p>Кол-во: {{ order.quantity }}</p> 
-                <p>Общая: {{ order.price}} руб.</p>
+                <p>Кол-ць: {{ order.quantity }}</p> 
+                <p>Агульная цана: {{ order.price}} руб.</p>
             {% endfor %} </p>
     {% endfor %} 
 </body>

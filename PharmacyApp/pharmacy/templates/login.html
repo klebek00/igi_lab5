@@ -2,10 +2,10 @@
 
 <form method="POST" novalidate>
 	{% csrf_token %}
-	<center><h2>Войти</h2>
+	<center><h2>Увайсці</h2>
 	<b>{{ form.as_p }}</b>
-	<button type="submit" >Вход</button>
-	<p>Вы ещё не зарегистрированны? <a href="{%url 'register' %}">Регистрация</a></p></center>
+	<button type="submit" >Уваход</button>
+	<p>Вы яшчэ не зарэгістраваны? <a href="{%url 'register' %}">Рэгістрацыя</a></p></center>
 </form>
 
 {% endblock content%}

@@ -4,21 +4,21 @@
     <title>Sales</title>
 </head>
 <body>
-    <h1><center>Статистика продаж</center></h1>
-    <h3>Прибыль: {{ general_sales }} руб.</h3>
-    <h3>Средняя прибыль: {{ average_sales }} руб.</h3>
-    <h3>Медиана: {{ median_sales }} руб.</h3>
+    <h1><center>Статыстыка продажаў</center></h1>
+    <h3>Перевага: {{ general_sales }} руб.</h3>
+    <h3>Сярэдняя перавага: {{ average_sales }} руб.</h3>
+    <h3>Медыяна: {{ median_sales }} руб.</h3>
     <h3>Мода: {{ mode_sales }} руб.</h3>
 
-    <h2>Yearly sales</h2>
+    <h2>Штогадовыя продажу</h2>
     {% for year, sales in yearly_sales_data %}
         <p><b>{{ year }}</b>: {{ sales }} руб.</p> 
     {% endfor %}
 
-    <h2>Продажи за три года</h2>
+    <h2>Продаж за тры гады</h2>
     <img src="data:image/png;base64,{{ image }}" height="400" width="1000">
 
-    <h2>Продажи за три года (диаграмма)</h2>
+    <h2>Продаж за тры гады</h2>
     {% for image in image_urls %}
         <img src="data:image/png;base64,{{ image }}" height="700" width="700">
     {% endfor %}

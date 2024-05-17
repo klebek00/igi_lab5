@@ -4,27 +4,27 @@
     <title>Reviews</title>
 </head>
 <body>
-    <h1>Отзывы</h1>
+    <h1>Водгукі</h1>
     {% for review in reviews %}
         <div>
             <h2>{{ review.title }}</h2>
-            <p>Оценка: <b>{{ review.rating }}/5</b></p>
+            <p>Ацэнка: <b>{{ review.rating }}/5</b></p>
             <p>{{ review.text }}</p>
-            <p>От: {{ review.user.username }}</p>
+            <p>Ад: {{ review.user.username }}</p>
             <p>Дата: {{ review.date }}</p>
 
             {% if review.user == request.user %}
-                <a href="{% url 'edit_review' review.id %}">Изменить </a>
+                <a href="{% url 'edit_review' review.id %}">Змяніць </a>
             {% endif %}
             
             {% if review.user == request.user %}
-                <a href="{% url 'delete_review' review.id %}"> Удалить</a>
+                <a href="{% url 'delete_review' review.id %}"> Выдаліць</a>
             {% endif %}
 
         </div>
     {% endfor %}
     <form action="{% url 'add_review' %}" method="get">
-        <button type="submit">Написать отзыв</button>
+        <button type="submit">Напісаць водгук</button>
     </form>
 </body>
 </html>

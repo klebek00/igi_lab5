@@ -46,14 +46,14 @@ def reviews(request):
     return render(request, 'reviews.html', {'reviews': reviews})
 
 class ReviewForm(forms.ModelForm):
-    rating = forms.IntegerField(label='Оценка', min_value=1, max_value=5)
+    rating = forms.IntegerField(label='Ацэнка', min_value=1, max_value=5)
     class Meta:
         model = Review
         fields = ['title', 'rating','text']
         labels = {
-            'title': 'Тема',
-            'rating': 'Оценка',
-            'text': 'Текст',
+            'title': 'Тэма',
+            'rating': 'Ацэнка',
+            'text': 'Тэкст',
         }
 
 class ReviewCreateView(View):
@@ -113,21 +113,21 @@ def privacy_policy(request):
 
 class RegistrationForm(UserCreationForm):
     password1 = forms.CharField(label='Пароль', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Повторите пароль', widget=forms.PasswordInput)
+    password2 = forms.CharField(label='Паўтарыце пароль', widget=forms.PasswordInput)
 
     class Meta:
         model = User
         
         fields = ['username', 'first_name', 'last_name', 'age', 'phone', 'address', 'password1', 'password2']
         labels = {
-            'username': 'Имя пользователя',
-            'first_name': 'Имя',
-            'last_name': 'Фамилия',
-            'age': 'Возраст',
-            'phone': 'Телефон', 
-            'address': 'Адрес',
+            'username': 'Імя карыстальніка',
+            'first_name': 'Імя',
+            'last_name': 'Прозвішча',
+            'age': 'Узрост',
+            'phone': 'Тэлефон', 
+            'address': 'Адрас',
             'password1': 'Пароль',
-            'password2': 'Повторите пароль',
+            'password2': 'Паўтарыце пароль',
         }
 
 
@@ -190,13 +190,18 @@ class MedicinesListView(View):
 
         search_query = request.GET.get('search')
 
+        
         medics = self.filter_medic(min_cost, max_cost)
+
+
         if search_query:
             medics = medics.filter(name__icontains=search_query)
             if not medics:
                 no_results = True
         else:
             medics = self.filter_medic(min_cost, max_cost)
+
+        medics = medics.order_by('name')
 
         data_list = []
         for medic in medics:
@@ -250,7 +255,7 @@ class CatigoriesListView(View):
 class OrderForm(forms.Form):
     amount = forms.IntegerField(min_value=1)
     
-    department = forms.ModelChoiceField(queryset=Department.objects.all(), empty_label="Выберите отделение")
+    department = forms.ModelChoiceField(queryset=Department.objects.all(), empty_label="Выберыце аддзяленне")
     promocode = forms.CharField(max_length=10, required=False)
 
 class OrderCreateView(View):
@@ -262,7 +267,7 @@ class OrderCreateView(View):
             return render(request, 'order_create_form.html', {'form': form, 'medic': medic})
         
         logging.error(f"Call failed OrderCreateView")
-        return HttpResponseNotFound('page not found')
+        return HttpResponseNotFound('Страніца не знойдзена')
     
     def post(self, request, pk, *args, **kwargs):
         if request.user.is_authenticated and request.user.status == "client":
@@ -282,7 +287,7 @@ class OrderCreateView(View):
 
                 if amount > quantity:
                      logging.warning(f"{amount} is greater than {quantity}")
-                     return HttpResponse("Выберите другое отделение или дождитесь новой поставки")
+                     return HttpResponse("Выберыце іншае аддзяленне аптэкі або дачакайцеся новай пастаўкі")
                 
                 sale = Sale.objects.create(
                     user=request.user,
@@ -304,10 +309,10 @@ class OrderCreateView(View):
                             
         elif request.user.is_authenticated and request.user.status == "staff":
             logging.error(f"{request.user.username} has status {request.user.status}")
-            return HttpResponseNotFound("For clients only")
+            return HttpResponseNotFound("Толькі для кліентаў")
         else:
             logging.error(f"User is not authenticated")
-            return HttpResponse('Sign in to make an order')
+            return HttpResponse('Увайдзіце ў акаўнт, каб зрабіць заказ')
 
 class UserOrderView(View):
     def get(self, request, pk, jk, *args, **kwargs):
@@ -317,7 +322,7 @@ class UserOrderView(View):
             order = Sale.objects.filter(user_id=pk, id=jk).first()
 
             return render(request, 'order_detail.html', {'order': order})
-        return HttpResponseNotFound("Page not found")
+        return HttpResponseNotFound("Страніца не знойдзена")
 
 class UserOrdersListView(View):
     def get(self, request, pk, *args, **kwargs):
@@ -328,7 +333,7 @@ class UserOrdersListView(View):
             return render(request, "orders_list.html", {'orders': order})
 
         logging.error(f"Call failed UserOrderView")
-        return HttpResponseNotFound("Page not found")
+        return HttpResponseNotFound("Страніца не знойдзена")
 
 class DepartmentInfo(View):
     model = Department
@@ -339,7 +344,7 @@ class DepartmentInfo(View):
             points = Department.objects.all()
             return render(request, "department_info.html", {'points': points})
         logging.error(f"Call failed DepartmentInfo")
-        return HttpResponseNotFound('page not found')
+        return HttpResponseNotFound('Страніца не знойдзена')
 
 class OrderListView(View):
     def get(self, request, *args, **kwargs):      
@@ -363,18 +368,16 @@ class OrderListView(View):
 
 
         logging.error(f"{request.user.username} has status {request.user.status}") 
-        return HttpResponseNotFound("Page not found")
+        return HttpResponseNotFound("Страніца не знойдзена")
     
 class SupplierListView(View):  
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated and request.user.status == "staff":
             logging.info(f"{request.user.username} called SupplierListView (status: {request.user.status}) | user's Timezone: {request.user.timezone}")
-            suppliers = Supplier.objects.all()
-
+            suppliers = Supplier.objects.all().prefetch_related('supply__medicine')
             return render(request, "suppliers.html", {'suppliers': suppliers})
         logging.error(f"{request.user.username} tried to call SupplierListView (status: {request.user.status})")
-        return HttpResponseNotFound("For staff only")
-    
+        return HttpResponseNotFound("Толькі для персаналу")    
 
 #API
 # class MedicalFactsView(View):

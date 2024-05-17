@@ -6,13 +6,13 @@
     <title>Department Info</title>
 </head>
 <body>
-    <h1>Отделения самовывоза</h1>
+    <h1>Аддзялення самовывоз</h1>
     <ul>
         {% for point in points %}
         <div>
             <h3>{{ point.no }}</h3>
-            <p>Адрес: <b>{{ point.address }}</b></p>
-            <p>Режим работы: <b>пн-вс {{ point.open|time:"H:i" }}-{{ point.close|time:"H:i" }}</b></p>
+            <p>Адрас: <b>{{ point.address }}</b></p>
+            <p>Рэжым работы: <b>пн-нд {{ point.open|time:"H:i" }}-{{ point.close|time:"H:i" }}</b></p>
         </div>
         {% endfor %}
     </ul>

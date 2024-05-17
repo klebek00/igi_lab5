@@ -5,13 +5,13 @@
     <title>News</title>
 </head>
 <body>
-    <h1>Новости</h1>
+    <h1>Навіна</h1>
     {% for new in news %}
         <div>
             <h2>{{ new.title }}</h2>
             <p>{{ new.content }}</p>
             <img src="{{ new.image.url }}">
-            <p>Опубликованно: {{ new.date|date:"d.m.Y" }}&nbsp;{{ new.date|time:"H:i" }}</p>
+            <p>Апублікавана: {{ new.date|date:"d.m.Y" }}&nbsp;{{ new.date|time:"H:i" }}</p>
         </div>
     {% endfor %}
 </body>

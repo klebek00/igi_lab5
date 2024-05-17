@@ -6,17 +6,19 @@
     <title>Suppliers Information</title>
 </head>
 <body>
-    <h1>Поставщики</h1>
+    <h1>Пастаўшчыкі</h1>
     {% for supplier in suppliers %}
     <div>
-        <p><strong>Наименование:</strong> {{ supplier.name }}</p>
-        <p><strong>Адрес:</strong> {{ supplier.address }}</p>
-        <p><strong>Телефон:</strong> {{ supplier.phone }}</p>
+        <p><strong>Назва:</strong> {{ supplier.name }}</p>
+        <p><strong>Адрас:</strong> {{ supplier.address }}</p>
+        <p><strong>Тэлефон:</strong> {{ supplier.phone }}</p>
 
-        <h2>Поставляемые препараты</h2>
+        <h2>Пастаўляюцца</h2>
         <ul>
             {% for supply in supplier.supply.all %}
             <li>{{ supply.medicine.name }}</li>
+            {% empty %}
+            <li>Няма паставак</li>
             {% endfor %}
         </ul>
     </div>

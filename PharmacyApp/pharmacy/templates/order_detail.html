@@ -8,13 +8,13 @@
 <body>
     <h1>Заказ #{{order.id}}</h1>
     <table border="1">
-        <tr>
+        <tr>Прэпарат
             <p>Дата: {{ order.date|date:"d.m.Y" }}</p> 
-            <p>Время: {{ order.date|time:"H:i" }}</p>
-            <p>Отделение: {{ order.department }}</p>
-            <p>Препарат: {{ order.medicine }}</p>
-            <p>Кол-во: {{ order.quantity }}</p>
-            <p>Цена: {{ order.price_prom }}</p>
+            <p>Час: {{ order.date|time:"H:i" }}</p>
+            <p>Аддзяленне: {{ order.department }}</p>
+            <p>Прэпарат: {{ order.medicine }}</p>
+            <p>Кол-ць: {{ order.quantity }}</p>
+            <p>Кошт: {{ order.price_prom }}</p>
         </tr>
     </table>
 </body>
