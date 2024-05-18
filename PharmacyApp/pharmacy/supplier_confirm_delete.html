@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Supplier</title>
+</head>
+<body>
+    <h1>Are you sure you want to delete {{ supplier.name }}?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+        <a href="{% url 'suppliers' %}">Cancel</a>  <!-- Замените 'suppliers_list' на правильное имя вашего URL для списка поставщиков -->
+    </form>
+</body>
+</html>

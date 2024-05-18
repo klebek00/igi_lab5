@@ -6,6 +6,8 @@
     <title>Department Info</title>
 </head>
 <body>
+    <a href="{% url 'home' %}">Галоўная</a>
+
     <h1>Аддзялення самовывоз</h1>
     <ul>
         {% for point in points %}
@@ -13,8 +15,29 @@
             <h3>{{ point.no }}</h3>
             <p>Адрас: <b>{{ point.address }}</b></p>
             <p>Рэжым работы: <b>пн-нд {{ point.open|time:"H:i" }}-{{ point.close|time:"H:i" }}</b></p>
+            {% if user.is_authenticated %}
+                {% if is_super %}
+                <form action="{% url 'department_edit' pk=point.id %}" method="get">
+                    <button type="submit">Редактировать</button>
+                </form>
+                <form action="{% url 'delete_dep' point.id %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit">Удалить</button>
+                </form>
+                {% endif %}
+            {% endif %}
+
         </div>
         {% endfor %}
+
+        {% if user.is_authenticated %}
+        {% if is_super %}
+        <form action="{% url 'department_create' %}" method="get">
+            <button type="submit">Дадаць</button>
+        </form>
+        {% endif %}    
+    {% endif %}
+    
     </ul>
 </body>
 </html>

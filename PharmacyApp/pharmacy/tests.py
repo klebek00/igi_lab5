@@ -155,7 +155,7 @@ class UserSaleTest(TestCase):
         
         response = self.client.post(reverse('create_order', kwargs={'pk': self.medicine.pk}), data)
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Выберите другое отделение или дождитесь новой поставки")
+        self.assertContains(response, "Выберыце іншае аддзяленне аптэкі або дачакайцеся новай пастаўкі")
 
     def test_post_auth_client_valid_data(self):
         self.client.force_login(self.user_client)
@@ -222,19 +222,19 @@ class MedicinesListViewTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Test Medicine 1")
         self.assertContains(response, "Test Medicine 2")
-        self.assertNotContains(response, "Товар отсутствует")
+        self.assertNotContains(response, "Тавар адсутнічае")
 
     def test_view_with_search_query_found(self):
         response = self.client.get(self.url, {'search': 'Test Medicine 1'})
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Test Medicine 1")
         self.assertNotContains(response, "Test Medicine 2")
-        self.assertNotContains(response, "Товар отсутствует")
+        self.assertNotContains(response, "Тавар адсутнічае")
 
     def test_view_with_search_query_not_found(self):
         response = self.client.get(self.url, {'search': 'Nonexistent Medicine'})
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Товар отсутствует")
+        self.assertContains(response, "Тавар адсутнічае")
         self.assertNotContains(response, "Test Medicine 1")
         self.assertNotContains(response, "Test Medicine 2")
 

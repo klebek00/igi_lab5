@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Supplier Form</title>
+</head>
+<body>
+    <h1>{% if supplier %}Edit{% else %}Create{% endif %} Supplier</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{% if supplier %}Save Changes{% else %}Create Supplier{% endif %}</button>
+    </form>
+</body>
+</html>

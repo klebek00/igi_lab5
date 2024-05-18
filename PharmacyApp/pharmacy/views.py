@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from django.http import HttpResponse, HttpResponseNotFound, JsonResponse
 from django.contrib.auth.views import LoginView
-import datetime
 import requests
 from django.views.generic import *
 from django.views import View
@@ -10,16 +9,21 @@ from django.contrib.auth.models import auth
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
+from django.forms import inlineformset_factory
 
 logging.basicConfig(level=logging.INFO, filename='logging.log', filemode='a', format='%(asctime)s %(levelname)s %(message)s')
 
 def home(request):
     latest_article = News.objects.latest('date')
-    return render(request, 'home.html', {'latest_article': latest_article})
+    user_id = request.user.id
+    is_staff = request.user.is_staff 
+    is_super = request.user.is_superuser
+    return render(request, 'home.html', {'latest_article': latest_article, 'user_id': user_id, 'is_staff': is_staff, 'is_super': is_super})
 
 def about_company(request):
+    user_id = request.user.id
     info = CompanyInfo.objects.first()
-    return render(request, 'about.html', {'company_info': info})
+    return render(request, 'about.html', {'company_info': info, 'user_id': user_id})
 
 def news(request):
     news = News.objects.all().order_by('-date')
@@ -59,11 +63,13 @@ class ReviewForm(forms.ModelForm):
 class ReviewCreateView(View):
     def get(self, request, **kwargs):
         if request.user.is_authenticated and request.user.status == 'client':
-
+            
             logging.info(f"{request.user.username} called ReviewCreateView (status: {request.user.status}) | user's Timezone: {request.user.timezone}")
 
             form = ReviewForm()
-            return render(request, 'review_create_form.html', {'form': form})
+            is_staff = request.user.is_staff 
+
+            return render(request, 'review_create_form.html', {'form': form, 'is_staff': is_staff})
         return redirect('login')
 
     def post(self, request, *args, **kwargs):
@@ -177,9 +183,11 @@ class MedicinesListView(View):
     model = Medicines
     #context_object_name = 'medicine_list'
     queryset = Medicines.objects.all()
+    
 
     def get(self, request, *args, **kwargs):
         no_results = False
+        is_super = request.user.is_superuser
 
         min_cost = request.GET.get('min_cost')
         if not min_cost:
@@ -210,7 +218,7 @@ class MedicinesListView(View):
                 'name': medic.name,
                 'cost': medic.cost,
             })
-        return render(request, "medicines_list.html", {'medicines': data_list, 'no_results': no_results})
+        return render(request, "medicines_list.html", {'medicines': data_list, 'no_results': no_results, 'is_super': is_super})
 
     @staticmethod
     def filter_medic(min=None, max=None):
@@ -238,12 +246,125 @@ class MedicinesDetailView(View):
         medic = get_object_or_404(Medicines, pk=self.kwargs['pk'])
         departments = DepartmentMedicine.objects.filter(medicine=medic)
         suppliers = medic.suppliers
+        is_staff = request.user.is_staff 
+        is_super = request.user.is_superuser
+
         context = {
             'medicine': medic,
             'departments': departments,
             'suppliers': suppliers,
+            'is_staff': is_staff,
+            'is_super': is_super,
         }
         return render(request, "medicine_detail.html", context)
+
+class MedicineForm(forms.ModelForm):
+    class Meta:
+        model = Medicines
+        fields = ['name', 'code', 'instructions', 'description', 'cost', 'photo', 'categories']  # Убираем 'suppliers'
+        labels = {
+            'name': 'Название',
+            'code': 'Код',
+            'instructions': 'Инструкция',
+            'description': 'Описание',
+            'cost': 'Стоимость',
+            'photo': 'Фото',
+            'categories': 'Категория',
+        }
+
+class SupplyForm(forms.ModelForm):
+    class Meta:
+        model = Supply
+        fields = ['supplier']
+        labels = {
+            'supplier': 'Поставщик',
+        }
+
+class DepartmentMedicineForm(forms.ModelForm):
+    class Meta:
+        model = DepartmentMedicine
+        fields = ['department', 'quantity']
+        labels = {
+            'department': 'Отделение',
+            'quantity': 'Количество',
+        }
+
+DepartmentMedicineFormSet = inlineformset_factory(
+    Medicines, DepartmentMedicine, form=DepartmentMedicineForm, extra=1
+)
+class MedicineCreateView(View):
+    def get(self, request, *args, **kwargs):
+        form = MedicineForm()
+        supply_form = SupplyForm()
+        department_medicine_formset = DepartmentMedicineFormSet()
+        return render(request, 'medicine_form.html', {
+            'form': form,
+            'supply_form': supply_form,
+            'department_medicine_formset': department_medicine_formset
+        })
+
+    def post(self, request, *args, **kwargs):
+        form = MedicineForm(request.POST, request.FILES)
+        supply_form = SupplyForm(request.POST)
+        department_medicine_formset = DepartmentMedicineFormSet(request.POST)
+        if form.is_valid() and supply_form.is_valid() and department_medicine_formset.is_valid():
+            medicine = form.save(commit=False)
+            supplier = supply_form.cleaned_data['supplier']
+            medicine.suppliers = supplier  # Установить поставщика для лекарства
+            medicine.save()
+            supply = supply_form.save(commit=False)
+            supply.medicine = medicine
+            supply.save()
+            department_medicine_formset.instance = medicine
+            department_medicine_formset.save()
+            return redirect('medicines')  # Замените на правильное имя URL для списка лекарств
+        return render(request, 'medicine_form.html', {
+            'form': form,
+            'supply_form': supply_form,
+            'department_medicine_formset': department_medicine_formset
+        })
+
+class MedicineUpdateView(View):
+    def get(self, request, pk, *args, **kwargs):
+        medicine = get_object_or_404(Medicines, pk=pk)
+        form = MedicineForm(instance=medicine)
+        supply = Supply.objects.filter(medicine=medicine).first()
+        supply_form = SupplyForm(instance=supply)
+        department_medicine_formset = DepartmentMedicineFormSet(instance=medicine)
+        return render(request, 'medicine_form.html', {
+            'form': form,
+            'supply_form': supply_form,
+            'department_medicine_formset': department_medicine_formset
+        })
+
+    def post(self, request, pk, *args, **kwargs):
+        medicine = get_object_or_404(Medicines, pk=pk)
+        form = MedicineForm(request.POST, request.FILES, instance=medicine)
+        supply = Supply.objects.filter(medicine=medicine).first()
+        supply_form = SupplyForm(request.POST, instance=supply)
+        department_medicine_formset = DepartmentMedicineFormSet(request.POST, instance=medicine)
+        if form.is_valid() and supply_form.is_valid() and department_medicine_formset.is_valid():
+            medicine = form.save(commit=False)
+            supplier = supply_form.cleaned_data['supplier']
+            medicine.suppliers = supplier  # Установить поставщика для лекарства
+            medicine.save()
+            supply_form.save()
+            department_medicine_formset.save()
+            return redirect('medicine_detail', pk=pk)  # Замените на правильное имя URL для деталей лекарства
+        return render(request, 'medicine_form.html', {
+            'form': form,
+            'supply_form': supply_form,
+            'department_medicine_formset': department_medicine_formset
+        })
+
+class MedicineDeleteView(View):
+    def post(self, request, pk):
+        medicine = get_object_or_404(Medicines, pk=pk)
+        medicine.delete()
+        return redirect('medicines')  # Или замените 'medicines' на правильный URL для списка медикаментов
+    
+def privacy_policy(request):
+    return render(request, 'privacy.html')
 
 class CatigoriesListView(View):
     model = Categories
@@ -335,14 +456,60 @@ class UserOrdersListView(View):
         logging.error(f"Call failed UserOrderView")
         return HttpResponseNotFound("Страніца не знойдзена")
 
+class DepartmentForm(forms.ModelForm):
+    class Meta:
+        model = Department
+        fields = ['no', 'address', 'close', 'open']
+        # labels = {
+        #     'no', 'address', 'close', 'open'
+        # }
+
+class DepartmentDeleteView(View):
+    def post(self, request, pk):
+        department = get_object_or_404(Department, pk=pk)
+        department.delete()
+        return redirect('departments')  # Или замените 'medicines' на правильный URL для списка медикаментов
+
+class DepartmentCreateView(View):
+    def get(self, request):
+        form = DepartmentForm()
+        return render(request, 'department_form.html', {'form': form})
+
+    def post(self, request):
+        form = DepartmentForm(request.POST)
+        if form.is_valid():
+            department = form.save()
+            logging.info(f"Department '{department.no}' was created")
+            return redirect('departments')  # Замените 'department_info' на правильное имя вашего URL для страницы с информацией об отделениях
+        return render(request, 'department_form.html', {'form': form})
+
+
+class DepartmentUpdateView(View):
+    def get(self, request, pk):
+        department = get_object_or_404(Department, pk=pk)
+        form = DepartmentForm(instance=department)
+        return render(request, 'department_form.html', {'form': form, 'department': department})
+
+    def post(self, request, pk):
+        department = get_object_or_404(Department, pk=pk)
+        form = DepartmentForm(request.POST, instance=department)
+        if form.is_valid():
+            form.save()
+            logging.info(f"Department '{department.no}' was updated")
+            return redirect('departments')  # Замените 'department_info' на правильное имя вашего URL для страницы с информацией об отделениях
+        return render(request, 'department_form.html', {'form': form, 'department': department})
+    
+
 class DepartmentInfo(View):
     model = Department
 
     def get(self, request, *args, **kwargs):
-        if request.user.is_authenticated and request.user.status == "client":
+        is_super = request.user.is_superuser
+
+        if request.user.is_authenticated:
             logging.info(f"{request.user.username} called DepartmentInfo | user's Timezone: {request.user.timezone}")
             points = Department.objects.all()
-            return render(request, "department_info.html", {'points': points})
+            return render(request, "department_info.html", {'points': points, 'is_super': is_super})
         logging.error(f"Call failed DepartmentInfo")
         return HttpResponseNotFound('Страніца не знойдзена')
 
@@ -373,34 +540,62 @@ class OrderListView(View):
 class SupplierListView(View):  
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated and request.user.status == "staff":
+            is_super = request.user.is_superuser
+
             logging.info(f"{request.user.username} called SupplierListView (status: {request.user.status}) | user's Timezone: {request.user.timezone}")
             suppliers = Supplier.objects.all().prefetch_related('supply__medicine')
-            return render(request, "suppliers.html", {'suppliers': suppliers})
+            return render(request, "suppliers.html", {'suppliers': suppliers, 'is_super': is_super})
         logging.error(f"{request.user.username} tried to call SupplierListView (status: {request.user.status})")
         return HttpResponseNotFound("Толькі для персаналу")    
 
+class SupplierForm(forms.ModelForm):
+    class Meta:
+        model = Supplier
+        fields = ['name', 'address', 'phone']
+        labels = {
+            'name': 'Название',
+            'address': 'Адрес',
+            'phone': 'Телефон',
+        }
+
+class SupplierCreateView(View):
+    def get(self, request):
+        form = SupplierForm()
+        return render(request, 'supplier_form.html', {'form': form})
+
+    def post(self, request):
+        form = SupplierForm(request.POST)
+        if form.is_valid():
+            form.save()
+            logging.info("Supplier was created")
+            return redirect('suppliers')  
+        return render(request, 'supplier_form.html', {'form': form})  
+
+class SupplierUpdateView(View):
+    def get(self, request, pk):
+        supplier = get_object_or_404(Supplier, pk=pk)
+        form = SupplierForm(instance=supplier)
+        return render(request, 'supplier_form.html', {'form': form, 'supplier': supplier})
+
+    def post(self, request, pk):
+        supplier = get_object_or_404(Supplier, pk=pk)
+        form = SupplierForm(request.POST, instance=supplier)
+        if form.is_valid():
+            form.save()
+            logging.info(f"Supplier '{supplier.name}' was updated")
+            return redirect('suppliers')  
+        return render(request, 'supplier_form.html', {'form': form, 'supplier': supplier})
+
+class SupplierDeleteView(View):
+    def get(self, request, pk):
+        supplier = get_object_or_404(Supplier, pk=pk)
+        return render(request, 'supplier_confirm_delete.html', {'supplier': supplier})
+    def post(self, request, pk):
+        supplier = get_object_or_404(Supplier, pk=pk)
+        supplier.delete()
+        return redirect('suppliers')  # Или замените 'medicines' на правильный URL для списка медикаментов
+
 #API
-# class MedicalFactsView(View):
-#     def get(self, request):
-#         # URL запроса к OpenFDA API
-#         url = 'https://api.fda.gov/drug/label.json?limit=5'
-
-#         # Отправка запроса к OpenFDA API
-#         response = requests.get(url)
-
-#         # Проверка успешности запроса и обработка данных
-#         if response.status_code == 200:
-#             data = response.json()
-#             # Получение фактов из ответа
-#             facts = []
-#             if 'results' in data and data['results']:
-#                 for result in data['results']:
-#                     fact = result.get('description', '')
-#                     if fact:
-#                         facts.append(fact)
-#             return JsonResponse({'facts': facts})
-#         else:
-#             return JsonResponse({'error': 'Failed to fetch data from API'}, status=500)
 
 class MedicalFactsView(View):
     def get(self, request):

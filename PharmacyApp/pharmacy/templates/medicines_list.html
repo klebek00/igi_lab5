@@ -6,6 +6,8 @@
     <title>Medicines List</title>
 </head>
 <body>
+    <a href="{% url 'home' %}">Галоўная</a>
+
     <h1>Лекавыя прэпараты</h1>
     <form action="{% url 'medicines' %}" method="get">
         <label for="search">Пошук па назве:</label>
@@ -33,5 +35,14 @@
             {% endfor %}
         </ul>
     {% endif %}
+
+    {% if user.is_authenticated %}
+    {% if is_super %}
+    <form action="{% url 'medicine_create' %}" method="get">
+        <button type="submit">Дадаць</button>
+    </form>
+    {% endif %}    
+{% endif %}
+
 </body>
 </html>

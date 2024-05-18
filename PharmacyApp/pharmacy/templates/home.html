@@ -2,10 +2,50 @@
 <html>
 <head>
     <title>HOME</title>
+    <style>
+        .navbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+    </style>
 </head>
 <body>
-    
-    <h2>{{latest_article.title }}</h2>
+    <div class="navbar">
+        <a href="{% url 'about' %}">О нас</a>
+        <a href="{% url 'news' %}">Новости</a>
+        <a href="{% url 'terms' %}">Вопросы и ответы</a>
+        <a href="{% url 'contacts' %}">Контакты</a>
+        <a href="{% url 'vacancies' %}">Вакансии</a>
+        <a href="{% url 'reviews' %}">Отзывы</a>
+        <a href="{% url 'promocodes' %}">Промокоды</a>
+        <a href="{% url 'medicines' %}">Лекарства</a>
+        <a href="{% url 'catigories' %}">Категории</a>
+
+        {% if user.is_authenticated %}
+            {% if is_super %}
+                <a href="{% url 'department_revenue_chart' %}">График выручки по отделам</a>
+                <a href="{% url 'clients' %}">Клиенты</a>
+                <a href="{% url 'sales' %}">Продажи</a>
+                <a href="{% url 'suppliers' %}">Поставщики</a>
+                <a href="{% url 'departments' %}">Отделы</a>
+                <a href="{% url 'logout' %}">Выйти</a>
+            {% elif user.is_staff %}
+                <a href="{% url 'suppliers' %}">Поставщики</a>
+                <a href="{% url 'orders' %}">Заказы</a>
+                <a href="{% url 'logout' %}">Выйти</a>
+            {% else %}
+                <a href="{% url 'departments' %}">Отделы</a>
+                <a href="{% url 'orders_list' pk=user_id %}">Мои заказы</a>
+                <a href="{% url 'logout' %}">Выйти</a>
+            {% endif %}
+        {% else %}
+            <a href="{% url 'login' %}">Войти</a>
+            <a href="{% url 'register' %}">Регистрация</a>
+        {% endif %}
+    </div>
+
+    <h2>{{ latest_article.title }}</h2>
     <p>{{ latest_article.content }}</p>
     <p>Апублікаваны: {{ latest_article.date|date:"d.m.Y" }}&nbsp;{{ latest_article.date|time:"H:i" }}</p>
     <img src="{{ latest_article.image.url }}">

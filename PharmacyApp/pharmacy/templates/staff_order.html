@@ -6,6 +6,8 @@
     <title>User Orders</title>
 </head>
 <body>
+    <a href="{% url 'home' %}">Галоўная</a>
+
     {% for order in sales %}
         <h2>Заказ #{{ order.id }}</h2>
         <table border="1">
