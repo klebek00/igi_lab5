@@ -5,6 +5,8 @@
     <title>Edit Review</title>
 </head>
 <body>
+    <a href="{% url 'reviews'%}">Назад да водгукаў</a>
+
     <h1>Змяніць водгук</h1>
     <form method="post">
         {% csrf_token %}

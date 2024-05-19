@@ -1,4 +1,6 @@
-<h1>Ваш замова</h1>
+<a href="{% url 'medicine_detail' pk=medic.pk %}">Назад</a>
+
+<h1>Ваша замова</h1>
 <p>Назва: {{ medic.name }}</p>
 <p>Кошт: {{ medic.cost }} руб.</p>
 

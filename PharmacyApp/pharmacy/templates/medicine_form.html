@@ -6,19 +6,25 @@
     <title>{% if form.instance.pk %}Редактировать медикамент{% else %}Создать медикамент{% endif %}</title>
 </head>
 <body>
-    <h1>{% if form.instance.pk %}Редактировать медикамент{% else %}Создать медикамент{% endif %}</h1>
+    {% if form.instance.pk %}
+    <a href="{% url 'medicine_detail' pk=form.instance.pk %}">Назад</a>
+    {% else %}
+    <a href="{% url 'medicines' %}">Назад да лекаў</a>
+    {% endif %}
+
+    <h1>{% if form.instance.pk %}Змяніць медыкамент{% else %}Стварыць медыкамент{% endif %}</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         {{ supply_form.as_p }}
         
-        <h2>Отделения и количество</h2>
+        <h2>Аддзялення і кол-ць</h2>
         {{ department_medicine_formset.management_form }}
         {% for form in department_medicine_formset %}
             {{ form.as_p }}
         {% endfor %}
         
-        <button type="submit">Сохранить</button>
+        <button type="submit">Захаваць</button>
     </form>
 </body>
 </html>

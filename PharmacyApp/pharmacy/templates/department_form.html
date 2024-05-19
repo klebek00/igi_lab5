@@ -6,12 +6,13 @@
     <title>{% if form.instance.pk %}Редактировать {% else %}Создать {% endif %}</title>
 </head>
 <body>
+    <a href="{% url 'departments' %}">Назад да аддзяленняў</a>
 
-    <h1>{% if form.instance.pk %}Редактировать аддзялення{% else %}Создать аддзялення{% endif %}</h1>
+    <h1>{% if form.instance.pk %}Змяніць аддзяленне{% else %}Стварыць аддзяленне{% endif %}</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Сохранить</button>
+        <button type="submit">Захаваць</button>
     </form>
 </body>
 </html>

@@ -7,12 +7,12 @@
 <body>
     <a href="{% url 'home' %}">Галоўная</a>
 
-    <h1>Навіна</h1>
+    <h1>Навіны</h1>
     {% for new in news %}
         <div>
             <h2>{{ new.title }}</h2>
             <p>{{ new.content }}</p>
-            <img src="{{ new.image.url }}">
+            <img src="{{ new.image.url }}"height="300" width="300">
             <p>Апублікавана: {{ new.date|date:"d.m.Y" }}&nbsp;{{ new.date|time:"H:i" }}</p>
         </div>
     {% endfor %}

@@ -9,16 +9,34 @@ from django.contrib.auth.models import auth
 from django.urls import reverse_lazy, reverse
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
+from django.utils import timezone
+from datetime import datetime
+from tzlocal import get_localzone
 from django.forms import inlineformset_factory
+import pytz
 
 logging.basicConfig(level=logging.INFO, filename='logging.log', filemode='a', format='%(asctime)s %(levelname)s %(message)s')
 
 def home(request):
+    user_timezone = get_localzone()
+
+    current_date_utc = timezone.now()
+    current_date_user_tz = current_date_utc.astimezone(user_timezone)
     latest_article = News.objects.latest('date')
     user_id = request.user.id
     is_staff = request.user.is_staff 
     is_super = request.user.is_superuser
-    return render(request, 'home.html', {'latest_article': latest_article, 'user_id': user_id, 'is_staff': is_staff, 'is_super': is_super})
+
+    context = {
+        'current_date_utc': current_date_utc.strftime('%d/%m/%Y %H:%M:%S'),
+        'current_date_user_tz': current_date_user_tz.strftime('%d/%m/%Y %H:%M:%S'),
+        'user_timezone': user_timezone.key,
+        'latest_article': latest_article, 
+        'user_id': user_id, 
+        'is_staff': is_staff, 
+        'is_super': is_super    
+        }
+    return render(request, 'home.html', context)
 
 def about_company(request):
     user_id = request.user.id
@@ -39,7 +57,49 @@ def faqs(request):
 
 def contacts(request):
     contacts = Contact.objects.all()
-    return render(request, 'contacts.html', {'contacts': contacts})
+    is_super = request.user.is_superuser
+    return render(request, 'contacts.html', {'contacts': contacts, 'is_super': is_super})
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ['description', 'user', 'photo']
+
+class ContactCreateView(View):
+    def get(self, request):
+        form = ContactForm()
+        return render(request, 'contacts_form.html', {'form': form})
+
+    def post(self, request):
+        form = ContactForm(request.POST, request.FILES)
+        if form.is_valid():
+            contact = form.save()
+            logging.info(f"Contact '{contact.user.username}' was created")
+            return redirect('contacts')  # Замените 'department_info' на правильное имя вашего URL для страницы с информацией об отделениях
+        return render(request, 'contacts_form.html', {'form': form})
+
+class ContactUpdateView(View):
+
+    def get(self, request, pk):
+        contact = get_object_or_404(Contact, pk=pk)
+        form = ContactForm(instance=contact)
+        return render(request, 'contacts_form.html', {'form': form, 'contact': contact})
+
+    def post(self, request, pk):
+        contact = get_object_or_404(Contact, pk=pk)
+        form = ContactForm(request.POST, request.FILES, instance=contact)
+        if form.is_valid():
+            form.save()
+            logging.info(f"Contact '{contact.user.username}' was updated")
+            return redirect('contacts') 
+        return render(request, 'contacts_form.html', {'form': form, 'contact': contact})
+
+
+class ContactDeleteView(View):
+    def post(self, request, pk):
+        contact = get_object_or_404(Contact, pk=pk)
+        contact.delete()
+        return redirect('contacts')  # Или замените 'medicines' на правильный URL для списка медикаментов
 
 def vacancies(request):
     vacancies = Vacancy.objects.all()
@@ -375,16 +435,21 @@ class CatigoriesListView(View):
     
 class OrderForm(forms.Form):
     amount = forms.IntegerField(min_value=1)
-    
-    department = forms.ModelChoiceField(queryset=Department.objects.all(), empty_label="Выберыце аддзяленне")
+    department = forms.ModelChoiceField(queryset=Department.objects.none(), empty_label="Выберыце аддзяленне")
     promocode = forms.CharField(max_length=10, required=False)
+
+    def __init__(self, *args, **kwargs):
+        medic_id = kwargs.pop('medic_id', None)
+        super(OrderForm, self).__init__(*args, **kwargs)
+        if medic_id:
+            self.fields['department'].queryset = Department.objects.filter(departmentmedicine__medicine_id=medic_id).distinct()
 
 class OrderCreateView(View):
     def get(self, request, pk, *args, **kwargs):
         if request.user.is_authenticated and request.user.status == "client" and Medicines.objects.filter(pk=pk).exists():
             logging.info(f"{request.user.username} called OrderCreateView | user's Timezone: {request.user.timezone}")
             medic = Medicines.objects.get(pk=pk)
-            form = OrderForm()     
+            form = OrderForm(medic_id=pk)  # передаем medic_id в форму
             return render(request, 'order_create_form.html', {'form': form, 'medic': medic})
         
         logging.error(f"Call failed OrderCreateView")
@@ -393,7 +458,7 @@ class OrderCreateView(View):
     def post(self, request, pk, *args, **kwargs):
         if request.user.is_authenticated and request.user.status == "client":
             medic = Medicines.objects.get(pk=pk)
-            form = OrderForm(request.POST)
+            form = OrderForm(request.POST, medic_id=pk)  # передаем medic_id в форму
             if form.is_valid():
                 logging.info(f"OrderForm has no errors")
 
@@ -401,39 +466,47 @@ class OrderCreateView(View):
                 department = form.cleaned_data['department']
                 code = form.cleaned_data['promocode']
 
-                department_medicine = get_object_or_404(DepartmentMedicine, department_id=department, medicine_id=medic)
-                quantity = department_medicine.quantity
+                try:
+                    department_medicine = DepartmentMedicine.objects.get(department_id=department.id, medicine_id=medic.id)
+                    quantity = department_medicine.quantity
 
-                promocode = Promocode.objects.filter(code=code).first()
+                    if amount > quantity:
+                        logging.warning(f"{amount} is greater than {quantity}")
+                        return HttpResponse("Выберыце іншае аддзяленне аптэкі або дачакайцеся новай пастаўкі")
+                    promocode = Promocode.objects.filter(code=code).first()
 
-                if amount > quantity:
-                     logging.warning(f"{amount} is greater than {quantity}")
-                     return HttpResponse("Выберыце іншае аддзяленне аптэкі або дачакайцеся новай пастаўкі")
+                    sale = Sale.objects.create(
+                        user=request.user,
+                        department=department,
+                        medicine=medic,
+                        quantity=amount,
+                        promocode=promocode,
+                        price=medic.cost * amount,
+                        price_prom=medic.cost * amount
+                    ) 
+                    department_medicine.quantity -= amount
+                    department_medicine.save()
+
+                    if promocode:
+                        logging.info(f"Promocode {promocode.code} used by {request.user.username}")
+                        sale.use_discount(promocode)
+
+                    url = reverse('user_order', kwargs={"pk": sale.user_id, "jk": sale.id})
+                    return redirect(url)
                 
-                sale = Sale.objects.create(
-                    user=request.user,
-                    department=department,
-                    medicine=medic,
-                    quantity=amount,
-                    promocode=promocode,
-                    price=medic.cost * amount,
-                    price_prom=medic.cost * amount
-                ) 
-                department_medicine.quantity -= amount
-                department_medicine.save()
-                if promocode:
-                    logging.info(f"Promocode {promocode.code} used by {request.user.username}")
-                    sale.use_discount(promocode)
+                except DepartmentMedicine.DoesNotExist:
+                    logging.error(f"Medicine {medic.id} does not exist in department {department.id}")
+                    return render(request, 'order_create_form.html', {'form': form, 'medic': medic, 'error_message': 'Выберыце іншае аддзяленне аптэкі або дачакайцеся новай пастаўкі'})
 
-                url = reverse('user_order', kwargs={"pk": sale.user_id, "jk": sale.id})
-                return redirect(url)
-                            
+            return render(request, 'order_create_form.html', {'form': form, 'medic': medic})
+
         elif request.user.is_authenticated and request.user.status == "staff":
             logging.error(f"{request.user.username} has status {request.user.status}")
             return HttpResponseNotFound("Толькі для кліентаў")
         else:
             logging.error(f"User is not authenticated")
             return HttpResponse('Увайдзіце ў акаўнт, каб зрабіць заказ')
+
 
 class UserOrderView(View):
     def get(self, request, pk, jk, *args, **kwargs):
@@ -455,6 +528,21 @@ class UserOrdersListView(View):
 
         logging.error(f"Call failed UserOrderView")
         return HttpResponseNotFound("Страніца не знойдзена")
+
+class OrderCancelView(View):
+    def post(self, request, pk, jk, *args, **kwargs):
+        if request.user.is_authenticated and request.user.id == int(pk):
+            sale = get_object_or_404(Sale, user_id=pk, id=jk)
+            if not sale.is_canceled:
+                sale.is_canceled = True
+                sale.save()
+                logging.info(f"Order '{sale.id}' was canceled by {request.user.username}")
+                department_medicine = get_object_or_404(DepartmentMedicine, department=sale.department, medicine=sale.medicine)
+                department_medicine.quantity += sale.quantity
+                department_medicine.save()
+            return redirect('user_order', pk=pk, jk=jk)
+        return HttpResponseNotFound("Страніца не знойдзена")
+
 
 class DepartmentForm(forms.ModelForm):
     class Meta:
@@ -518,8 +606,9 @@ class OrderListView(View):
         if request.user.is_authenticated and request.user.status == "staff":
 
             logging.info(f"{request.user.username} called OrderListView (status: {request.user.status}) | user's Timezone: {request.user.timezone}")
-            sales = Sale.objects.all()
-            total_revenue = sum(sale.price for sale in sales)
+            
+            sales = Sale.objects.filter(is_canceled=False)      
+            total_revenue = sum(sale.price_ for sale in sales)
 
             revenue_by_department = {}
             for sale in sales:
@@ -547,6 +636,7 @@ class SupplierListView(View):
             return render(request, "suppliers.html", {'suppliers': suppliers, 'is_super': is_super})
         logging.error(f"{request.user.username} tried to call SupplierListView (status: {request.user.status})")
         return HttpResponseNotFound("Толькі для персаналу")    
+
 
 class SupplierForm(forms.ModelForm):
     class Meta:

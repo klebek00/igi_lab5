@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if contact %}Edit{% else %}Create{% endif %} Contact</title>
+</head>
+<body>
+    <a href="{% url 'contacts' %}">Назад да кантактаў</a>
+    <h1>{% if contact %}Змяніць{% else %}Стварыць{% endif %} кантакт</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Захаваць</button>
+    </form>
+</body>
+</html>

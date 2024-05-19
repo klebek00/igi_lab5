@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Корзина</title>
+</head>
+<body>
+    <h1>Ваша корзина</h1>
+    <ul>
+        {% for item in cart.items.all %}
+            <li>{{ item.medicine.name }} - {{ item.quantity }}</li>
+        {% endfor %}
+    </ul>
+    <form method="post" action="{% url 'checkout' %}">
+        {% csrf_token %}
+        <label for="promocode">Промокод:</label>
+        <input type="text" id="promocode" name="promocode">
+        <button type="submit">Оформить заказ</button>
+    </form>
+</body>
+</html>

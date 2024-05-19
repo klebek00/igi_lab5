@@ -11,7 +11,7 @@
     <h1>Замовы</h1>
     <ul>
         {% for order in orders %}
-        <div><a href="{% url 'user_order' pk=user.id jk=order.id %}">Заказ #{{ order.id }}</div>{% endfor %}
+        <div><a href="{% url 'user_order' pk=user.id jk=order.id %}">Замова #{{ order.id }}</div>{% endfor %}
     </ul>
 </body>
 </html>

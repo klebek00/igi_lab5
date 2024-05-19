@@ -18,11 +18,11 @@
             {% if user.is_authenticated %}
                 {% if is_super %}
                 <form action="{% url 'department_edit' pk=point.id %}" method="get">
-                    <button type="submit">Редактировать</button>
+                    <button type="submit">Змяніць</button>
                 </form>
                 <form action="{% url 'delete_dep' point.id %}" method="post" style="display: inline;">
                     {% csrf_token %}
-                    <button type="submit">Удалить</button>
+                    <button type="submit">Выдаліць</button>
                 </form>
                 {% endif %}
             {% endif %}

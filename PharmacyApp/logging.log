@@ -14344,3 +14344,1128 @@ django.template.exceptions.TemplateDoesNotExist: supplier_form.html
 2024-05-18 19:42:17,715 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
 2024-05-18 19:42:21,723 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
 2024-05-18 19:42:51,920 INFO Watching for file changes with StatReloader
+2024-05-18 19:42:56,571 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-18 19:43:04,113 INFO Supplier was created
+2024-05-18 19:43:04,129 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-18 19:43:08,319 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-18 19:43:32,101 INFO Supplier was created
+2024-05-18 19:43:32,117 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-18 19:43:38,572 INFO Supplier 'vvv' was updated
+2024-05-18 19:43:38,587 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-18 19:43:42,934 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-18 22:11:44,700 ERROR Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 21, in home
+    return render(request, 'home.html', {'latest_article': latest_article, 'user_id': user_id, 'is_staff': is_staff, 'is_super': is_super})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'categories' not found. 'categories' is not a valid view function or pattern name.
+2024-05-18 22:12:01,199 INFO admin LOGOUT (status: staff) | user's Timezone: Europe/Moscow
+2024-05-18 22:12:08,975 INFO User LOGIN
+2024-05-18 22:12:11,271 INFO first called UserOrderView | user's Timezone: Europe/Moscow
+2024-05-18 22:12:46,438 INFO first called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-18 22:18:55,152 INFO first called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-18 22:18:57,664 INFO first called UserOrderView | user's Timezone: Europe/Moscow
+2024-05-18 22:19:01,944 INFO first called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-18 22:19:30,915 INFO first called UserOrderView | user's Timezone: Europe/Moscow
+2024-05-18 22:45:03,720 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\models.py changed, reloading.
+2024-05-18 22:45:07,887 INFO Watching for file changes with StatReloader
+2024-05-18 22:46:31,904 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-18 22:46:33,205 INFO Watching for file changes with StatReloader
+2024-05-18 22:46:42,945 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-18 22:46:44,622 INFO Watching for file changes with StatReloader
+2024-05-18 22:46:55,259 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-18 22:46:56,570 INFO Watching for file changes with StatReloader
+2024-05-18 22:47:56,603 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-18 22:47:57,698 INFO Watching for file changes with StatReloader
+2024-05-18 22:48:02,795 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-18 22:48:04,090 INFO Watching for file changes with StatReloader
+2024-05-18 22:48:06,519 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-18 22:48:07,726 INFO Watching for file changes with StatReloader
+2024-05-18 22:48:11,012 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-18 22:48:12,150 INFO Watching for file changes with StatReloader
+2024-05-18 22:48:19,282 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-18 22:48:20,721 INFO Watching for file changes with StatReloader
+2024-05-18 22:49:14,126 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\models.py changed, reloading.
+2024-05-18 22:49:15,362 INFO Watching for file changes with StatReloader
+2024-05-18 22:49:34,874 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\models.py changed, reloading.
+2024-05-18 22:49:36,122 INFO Watching for file changes with StatReloader
+2024-05-18 22:50:41,719 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-18 22:50:43,176 INFO Watching for file changes with StatReloader
+2024-05-18 22:50:46,737 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-18 22:50:47,821 INFO Watching for file changes with StatReloader
+2024-05-18 22:50:51,036 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-18 22:50:52,266 INFO Watching for file changes with StatReloader
+2024-05-18 22:50:58,847 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\models.py changed, reloading.
+2024-05-18 22:51:00,357 INFO Watching for file changes with StatReloader
+2024-05-18 22:51:18,313 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-18 22:51:19,694 INFO Watching for file changes with StatReloader
+2024-05-18 22:51:49,594 INFO Watching for file changes with StatReloader
+2024-05-18 22:51:59,866 INFO first called UserOrderView | user's Timezone: Europe/Moscow
+2024-05-18 22:52:01,426 INFO first called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-18 22:52:15,724 INFO first called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-18 22:52:59,966 INFO first called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-18 22:53:33,805 INFO first called UserOrderView | user's Timezone: Europe/Moscow
+2024-05-18 22:53:39,498 INFO first LOGOUT (status: client) | user's Timezone: Europe/Moscow
+2024-05-18 22:53:46,518 INFO User LOGIN
+2024-05-18 22:54:38,644 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-18 22:54:46,141 INFO admin called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-18 22:55:00,617 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-18 22:55:09,294 INFO Supplier was created
+2024-05-18 22:55:09,308 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-18 22:55:14,021 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-18 23:00:50,630 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-18 23:00:57,921 INFO admin called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-18 23:01:10,765 INFO admin LOGOUT (status: staff) | user's Timezone: Europe/Moscow
+2024-05-18 23:01:26,789 INFO User LOGIN
+2024-05-18 23:01:32,969 INFO Med1 called OrderListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-18 23:01:44,335 INFO Med1 LOGOUT (status: staff) | user's Timezone: Europe/Moscow
+2024-05-18 23:01:53,132 INFO User LOGIN
+2024-05-18 23:02:01,573 INFO first called ReviewCreateView (status: client) | user's Timezone: Europe/Moscow
+2024-05-18 23:02:09,091 INFO ReviewForm has no errors)
+2024-05-18 23:02:09,125 INFO Review 'mnd,fnwe,f' was created by first 
+2024-05-18 23:02:31,020 INFO first called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-18 23:02:39,750 INFO OrderForm has no errors
+2024-05-18 23:02:39,789 WARNING Not Found: /medicines/24/order/create/
+2024-05-18 23:02:56,515 INFO first called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-18 23:03:07,347 INFO OrderForm has no errors
+2024-05-18 23:03:07,355 WARNING 10000 is greater than 99
+2024-05-18 23:03:40,957 INFO first called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-18 23:03:47,694 INFO first called UserOrderView | user's Timezone: Europe/Moscow
+2024-05-18 23:03:49,723 INFO first called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 03:30:42,556 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 03:30:42,914 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 03:30:44,749 INFO Watching for file changes with StatReloader
+2024-05-19 03:31:49,171 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 03:31:50,402 INFO Watching for file changes with StatReloader
+2024-05-19 03:32:09,280 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 03:32:10,690 INFO Watching for file changes with StatReloader
+2024-05-19 03:32:39,916 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 03:32:41,102 INFO Watching for file changes with StatReloader
+2024-05-19 03:34:04,016 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 03:34:05,414 INFO Watching for file changes with StatReloader
+2024-05-19 03:34:08,523 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 03:34:09,714 INFO Watching for file changes with StatReloader
+2024-05-19 03:34:11,018 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 03:34:12,180 INFO Watching for file changes with StatReloader
+2024-05-19 03:34:14,495 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 03:34:15,531 INFO Watching for file changes with StatReloader
+2024-05-19 03:34:33,836 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 03:34:35,142 INFO Watching for file changes with StatReloader
+2024-05-19 03:34:46,072 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 03:34:47,181 INFO Watching for file changes with StatReloader
+2024-05-19 03:34:51,471 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 03:34:52,875 INFO Watching for file changes with StatReloader
+2024-05-19 03:34:57,400 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 03:34:58,487 INFO Watching for file changes with StatReloader
+2024-05-19 03:35:01,862 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 03:35:02,863 INFO Watching for file changes with StatReloader
+2024-05-19 03:35:06,549 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 03:35:07,725 INFO Watching for file changes with StatReloader
+2024-05-19 03:35:11,831 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 03:35:13,485 INFO Watching for file changes with StatReloader
+2024-05-19 03:35:17,578 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 03:35:18,654 INFO Watching for file changes with StatReloader
+2024-05-19 03:36:16,404 ERROR Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 32, in home
+    'user_timezone': user_timezone.zone,
+                     ^^^^^^^^^^^^^^^^^^
+AttributeError: 'zoneinfo.ZoneInfo' object has no attribute 'zone'
+2024-05-19 03:36:59,464 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 03:37:00,759 INFO Watching for file changes with StatReloader
+2024-05-19 03:39:51,834 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 03:39:53,155 INFO Watching for file changes with StatReloader
+2024-05-19 03:39:54,545 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 03:39:56,070 INFO Watching for file changes with StatReloader
+2024-05-19 03:39:59,297 ERROR Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 39, in home
+    return render(request, 'home.html', {context})
+                                        ^^^^^^^^^
+TypeError: unhashable type: 'dict'
+2024-05-19 03:40:17,941 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 03:40:22,580 INFO Watching for file changes with StatReloader
+2024-05-19 04:21:33,322 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\models.py changed, reloading.
+2024-05-19 04:21:34,433 INFO Watching for file changes with StatReloader
+2024-05-19 04:21:55,270 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\models.py changed, reloading.
+2024-05-19 04:42:24,737 INFO Watching for file changes with StatReloader
+2024-05-19 04:42:30,621 INFO first LOGOUT (status: client) | user's Timezone: Europe/Moscow
+2024-05-19 04:42:35,301 INFO User LOGIN
+2024-05-19 04:42:40,115 ERROR Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 61, in contacts
+    return render(request, 'contacts.html', {'contacts': contacts, 'is_super': is_super})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'department_edit' with keyword arguments '{'pk': ''}' not found. 1 pattern(s) tried: ['departments/(?P<pk>[0-9]+)/edit/\\Z']
+2024-05-19 04:43:44,146 ERROR Internal Server Error: /contacts/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 61, in contacts
+    return render(request, 'contacts.html', {'contacts': contacts, 'is_super': is_super})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 242, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'contact_edit' with keyword arguments '{'pk': ''}' not found. 1 pattern(s) tried: ['contacts/(?P<pk>[0-9]+)/edit/\\Z']
+2024-05-19 04:44:09,874 ERROR Internal Server Error: /contacts/2/edit/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 90, in get
+    return render(request, 'contact_form.html', {'form': form, 'contact': contact})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: contact_form.html
+2024-05-19 04:44:51,109 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 04:44:51,872 INFO Watching for file changes with StatReloader
+2024-05-19 04:44:54,321 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 04:44:55,161 INFO Watching for file changes with StatReloader
+2024-05-19 04:44:58,531 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 04:44:59,260 INFO Watching for file changes with StatReloader
+2024-05-19 04:46:34,082 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 04:46:35,048 INFO Watching for file changes with StatReloader
+2024-05-19 04:46:39,766 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 04:46:40,637 INFO Watching for file changes with StatReloader
+2024-05-19 04:46:55,777 ERROR Internal Server Error: /contacts/2/edit/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 94, in post
+    form = ContactForm(request.POST, instance=contact)
+           ^^^^^^^^^^^^^^^
+NameError: name 'ContactFormForm' is not defined
+2024-05-19 04:47:30,580 INFO Watching for file changes with StatReloader
+2024-05-19 04:47:53,629 ERROR Internal Server Error: /contacts/2/edit/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 97, in post
+    logging.info(f"Contact '{contact.name}' was updated")
+                             ^^^^^^^^^^^^
+AttributeError: 'Contact' object has no attribute 'name'
+2024-05-19 04:48:32,019 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 04:48:32,961 INFO Watching for file changes with StatReloader
+2024-05-19 04:48:34,211 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 04:48:34,901 INFO Watching for file changes with StatReloader
+2024-05-19 04:48:40,348 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 04:48:41,204 INFO Watching for file changes with StatReloader
+2024-05-19 04:48:50,858 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 04:48:51,757 INFO Watching for file changes with StatReloader
+2024-05-19 04:49:05,970 INFO Contact 'user' was updated
+2024-05-19 04:49:18,594 INFO Contact 'user' was updated
+2024-05-19 04:49:30,166 INFO Contact 'Med1' was updated
+2024-05-19 04:49:40,394 INFO Contact 'Med1' was updated
+2024-05-19 04:52:31,405 INFO Contact 'user' was updated
+2024-05-19 04:52:57,970 INFO Contact 'user' was updated
+2024-05-19 04:56:09,225 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 04:56:10,740 INFO Watching for file changes with StatReloader
+2024-05-19 04:56:51,100 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 04:56:52,329 INFO Watching for file changes with StatReloader
+2024-05-19 04:57:00,145 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 04:57:01,371 INFO Watching for file changes with StatReloader
+2024-05-19 04:57:19,757 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 04:57:21,133 INFO Watching for file changes with StatReloader
+2024-05-19 04:57:22,583 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 04:57:23,937 INFO Watching for file changes with StatReloader
+2024-05-19 04:57:49,693 INFO Contact 'user' was updated
+2024-05-19 04:58:03,101 INFO Contact 'Med1' was updated
+2024-05-19 04:59:19,655 ERROR Internal Server Error: /contacts/new/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 77, in post
+    logging.info(f"Contact '{contacts.name}' was created")
+                             ^^^^^^^^^^^^^
+AttributeError: 'Contact' object has no attribute 'name'
+2024-05-19 04:59:38,052 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 04:59:40,084 INFO Watching for file changes with StatReloader
+2024-05-19 13:22:21,467 INFO admin LOGOUT (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 13:37:05,335 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 13:37:09,644 INFO Watching for file changes with StatReloader
+2024-05-19 13:37:23,062 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 13:37:24,629 INFO Watching for file changes with StatReloader
+2024-05-19 13:40:36,185 INFO User LOGIN
+2024-05-19 13:41:14,305 INFO Med1 called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 13:41:19,949 INFO Med1 called OrderListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 13:41:38,403 INFO Med1 LOGOUT (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 13:41:45,200 INFO User LOGIN
+2024-05-19 13:43:53,990 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 13:44:30,473 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 13:45:26,847 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 13:45:30,177 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 13:45:34,165 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 13:45:47,380 INFO admin called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-19 13:47:25,248 INFO admin called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-19 13:47:25,376 INFO admin called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-19 13:47:25,538 INFO admin called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-19 13:47:27,170 ERROR Internal Server Error: /departments/new/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 502, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'departments'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 536, in get
+    return render(request, 'department_form.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\backends\django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 504, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 565, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 9: 'departments'. Did you forget to register or load this tag?
+2024-05-19 13:48:16,433 INFO admin called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-19 13:48:19,817 INFO admin called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-19 13:48:33,163 INFO admin LOGOUT (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 13:48:40,648 INFO User LOGIN
+2024-05-19 13:48:53,552 INFO first called ReviewCreateView (status: client) | user's Timezone: Europe/Moscow
+2024-05-19 13:50:42,879 INFO first called ReviewCreateView (status: client) | user's Timezone: Europe/Moscow
+2024-05-19 13:50:49,759 INFO first called ReviewCreateView (status: client) | user's Timezone: Europe/Moscow
+2024-05-19 13:51:16,824 INFO ReviewForm has no errors)
+2024-05-19 13:51:16,859 INFO Review 'Водгук' was created by first 
+2024-05-19 13:51:55,431 INFO first called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 13:54:02,421 INFO first called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 13:54:57,203 INFO first called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 13:55:07,499 INFO OrderForm has no errors
+2024-05-19 13:55:07,569 INFO Promocode MED103 used by first
+2024-05-19 13:55:07,653 INFO first called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 13:56:00,450 INFO first called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 13:56:16,701 INFO first called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-19 13:56:21,286 INFO first called UserOrderView | user's Timezone: Europe/Moscow
+2024-05-19 13:56:22,949 INFO first called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 13:56:33,485 INFO first LOGOUT (status: client) | user's Timezone: Europe/Moscow
+2024-05-19 13:56:39,666 INFO User LOGIN
+2024-05-19 13:56:44,780 ERROR Internal Server Error: /medicines/new/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 360, in get
+    return render(request, 'medicine_form.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'medicine_detail' with keyword arguments '{'pk': ''}' not found. 1 pattern(s) tried: ['medicines/(?P<pk>[0-9]+)/\\Z']
+2024-05-19 13:59:37,762 ERROR Internal Server Error: /medicines/20/edit/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 394, in get
+    return render(request, 'medicine_form.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'medicine_detail' with keyword arguments '{'pk': ''}' not found. 1 pattern(s) tried: ['medicines/(?P<pk>[0-9]+)/\\Z']
+2024-05-19 14:02:43,057 ERROR Internal Server Error: /medicines/20/edit/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 394, in get
+    return render(request, 'medicine_form.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 326, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'medicine_detail' with keyword arguments '{'pk': ''}' not found. 1 pattern(s) tried: ['medicines/(?P<pk>[0-9]+)/\\Z']
+2024-05-19 14:19:11,299 INFO Watching for file changes with StatReloader
+2024-05-19 14:19:16,196 INFO admin LOGOUT (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 14:19:22,373 INFO User LOGIN
+2024-05-19 14:19:28,550 INFO first called UserOrderView | user's Timezone: Europe/Moscow
+2024-05-19 14:19:30,140 INFO first called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 14:19:33,538 INFO Order '17' was canceled by first
+2024-05-19 14:19:33,587 INFO first called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 14:20:52,432 INFO first LOGOUT (status: client) | user's Timezone: Europe/Moscow
+2024-05-19 14:20:59,208 INFO User LOGIN
+2024-05-19 14:23:30,552 INFO admin LOGOUT (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 14:23:34,907 INFO User LOGIN
+2024-05-19 14:23:46,096 INFO first called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 14:23:53,397 INFO OrderForm has no errors
+2024-05-19 14:23:53,471 INFO first called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 14:23:57,870 INFO first LOGOUT (status: client) | user's Timezone: Europe/Moscow
+2024-05-19 14:24:03,852 INFO User LOGIN
+2024-05-19 14:24:16,268 INFO admin LOGOUT (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 14:24:21,629 INFO User LOGIN
+2024-05-19 14:24:23,277 INFO first called UserOrderView | user's Timezone: Europe/Moscow
+2024-05-19 14:24:26,825 INFO first called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 14:24:32,522 INFO Order '18' was canceled by first
+2024-05-19 14:24:32,555 INFO first called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 14:24:40,015 INFO first called UserOrderView | user's Timezone: Europe/Moscow
+2024-05-19 14:24:41,842 INFO first called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 14:24:45,547 INFO first called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 14:24:48,683 INFO first LOGOUT (status: client) | user's Timezone: Europe/Moscow
+2024-05-19 14:24:54,296 INFO User LOGIN
+2024-05-19 14:29:53,067 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 14:29:57,293 INFO Watching for file changes with StatReloader
+2024-05-19 14:34:09,197 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 14:34:13,522 INFO admin called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-19 14:34:23,372 INFO admin LOGOUT (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 14:34:31,507 INFO User LOGIN
+2024-05-19 14:34:34,419 INFO Med1 called OrderListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 14:37:05,412 INFO Med1 LOGOUT (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 14:37:11,134 INFO User LOGIN
+2024-05-19 14:45:56,063 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 14:45:57,891 INFO Watching for file changes with StatReloader
+2024-05-19 14:46:01,856 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 14:46:03,269 INFO Watching for file changes with StatReloader
+2024-05-19 14:46:06,800 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 14:46:08,146 INFO Watching for file changes with StatReloader
+2024-05-19 14:46:29,499 INFO admin LOGOUT (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 14:46:36,807 INFO User LOGIN
+2024-05-19 14:46:50,022 INFO Med1 called OrderListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 14:48:43,745 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 14:48:45,856 INFO Watching for file changes with StatReloader
+2024-05-19 14:48:47,435 INFO Med1 called OrderListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 14:50:10,229 INFO Med1 LOGOUT (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 14:50:16,117 INFO User LOGIN
+2024-05-19 14:52:00,981 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-19 14:52:02,314 INFO Watching for file changes with StatReloader
+2024-05-19 14:52:05,400 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-19 14:52:06,755 INFO Watching for file changes with StatReloader
+2024-05-19 14:52:15,337 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-19 14:52:17,008 INFO Watching for file changes with StatReloader
+2024-05-19 14:52:18,922 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-19 14:52:20,244 INFO Watching for file changes with StatReloader
+2024-05-19 14:52:48,676 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-19 14:52:49,977 INFO Watching for file changes with StatReloader
+2024-05-19 14:52:53,588 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-19 14:52:55,274 INFO Watching for file changes with StatReloader
+2024-05-19 14:53:08,808 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-19 14:53:10,332 INFO Watching for file changes with StatReloader
+2024-05-19 14:53:14,941 ERROR Internal Server Error: /sales
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py", line 49, in sales
+    orders = Sale.objects.all(is_canceled=False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BaseManager.all() got an unexpected keyword argument 'is_canceled'
+2024-05-19 14:54:15,116 ERROR Internal Server Error: /sales
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py", line 49, in sales
+    orders = Sale.objects.all(is_canceled=False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BaseManager.all() got an unexpected keyword argument 'is_canceled'
+2024-05-19 14:55:41,960 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-19 14:55:44,937 INFO Watching for file changes with StatReloader
+2024-05-19 14:56:15,727 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-19 14:56:17,199 INFO Watching for file changes with StatReloader
+2024-05-19 14:56:35,885 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-19 14:56:37,414 INFO Watching for file changes with StatReloader
+2024-05-19 14:59:01,197 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-19 14:59:02,956 INFO Watching for file changes with StatReloader
+2024-05-19 15:17:21,705 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\statistics.py changed, reloading.
+2024-05-19 15:17:23,414 INFO Watching for file changes with StatReloader
+2024-05-19 15:19:52,676 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 15:19:53,890 INFO Watching for file changes with StatReloader
+2024-05-19 15:33:55,635 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 15:34:00,581 INFO Watching for file changes with StatReloader
+2024-05-19 15:34:53,243 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 15:34:54,489 INFO Watching for file changes with StatReloader
+2024-05-19 15:37:05,046 INFO admin LOGOUT (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 15:37:10,894 INFO User LOGIN
+2024-05-19 15:37:17,195 INFO first called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 15:55:41,168 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-19 15:55:42,140 INFO Watching for file changes with StatReloader
+2024-05-19 15:55:44,794 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\urls.py changed, reloading.
+2024-05-19 15:55:45,613 INFO Watching for file changes with StatReloader
+2024-05-19 16:00:34,927 INFO first called UserOrderView | user's Timezone: Europe/Moscow
+2024-05-19 16:00:40,563 INFO first LOGOUT (status: client) | user's Timezone: Europe/Moscow
+2024-05-19 16:00:44,780 INFO User LOGIN
+2024-05-19 16:02:58,342 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 21:57:53,975 INFO Watching for file changes with StatReloader
+2024-05-19 21:58:19,758 INFO admin LOGOUT (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 21:59:53,894 INFO User LOGIN
+2024-05-19 22:00:54,138 INFO first called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-19 22:01:13,789 INFO first called UserOrderView | user's Timezone: Europe/Moscow
+2024-05-19 22:01:16,133 INFO first called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 22:01:23,069 INFO first called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 22:01:55,967 INFO first called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 22:02:05,426 ERROR Internal Server Error: /medicines/4/order/create/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view pharmacy.views.view didn't return an HttpResponse object. It returned None instead.
+2024-05-19 22:03:00,913 INFO first called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 22:03:08,097 ERROR Internal Server Error: /medicines/4/order/create/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view pharmacy.views.view didn't return an HttpResponse object. It returned None instead.
+2024-05-19 22:04:18,649 ERROR Internal Server Error: /medicines/4/order/create/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view pharmacy.views.view didn't return an HttpResponse object. It returned None instead.
+2024-05-19 22:04:26,967 INFO first called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 22:04:33,024 ERROR Internal Server Error: /medicines/4/order/create/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view pharmacy.views.view didn't return an HttpResponse object. It returned None instead.
+2024-05-19 22:04:56,671 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:04:59,134 INFO Watching for file changes with StatReloader
+2024-05-19 22:05:01,346 INFO first called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 22:05:08,903 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:05:10,502 INFO Watching for file changes with StatReloader
+2024-05-19 22:05:13,316 INFO first called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 22:05:20,978 INFO OrderForm has no errors
+2024-05-19 22:05:20,988 WARNING 12345678 is greater than 25
+2024-05-19 22:05:32,039 INFO first called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 22:05:45,329 INFO OrderForm has no errors
+2024-05-19 22:05:45,428 INFO first called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 22:05:58,289 INFO first called UserOrderView | user's Timezone: Europe/Moscow
+2024-05-19 22:05:59,619 INFO first called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 22:06:08,166 INFO first LOGOUT (status: client) | user's Timezone: Europe/Moscow
+2024-05-19 22:06:17,530 INFO User LOGIN
+2024-05-19 22:06:58,160 INFO admin called SupplierListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 22:07:09,347 INFO admin called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-19 22:08:16,227 INFO admin LOGOUT (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 22:08:22,942 INFO User LOGIN
+2024-05-19 22:08:27,749 INFO Med1 called OrderListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 22:10:19,096 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:13:09,680 INFO Watching for file changes with StatReloader
+2024-05-19 22:13:13,646 INFO Med1 LOGOUT (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 22:13:21,687 INFO User LOGIN
+2024-05-19 22:13:45,724 INFO secondon called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 22:13:45,838 ERROR Internal Server Error: /medicines/17/order/create/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 447, in get
+    form = OrderForm(medic_id=pk)
+      ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BaseForm.__init__() got an unexpected keyword argument 'medic_id'
+2024-05-19 22:14:51,771 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:14:53,348 INFO Watching for file changes with StatReloader
+2024-05-19 22:14:55,250 INFO secondon called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 22:15:15,802 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:15:17,387 INFO Watching for file changes with StatReloader
+2024-05-19 22:15:26,800 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:15:28,779 INFO Watching for file changes with StatReloader
+2024-05-19 22:15:32,275 INFO OrderForm has no errors
+2024-05-19 22:15:32,342 INFO Promocode MED103 used by secondon
+2024-05-19 22:15:32,375 INFO secondon called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 22:16:06,315 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:16:08,053 INFO Watching for file changes with StatReloader
+2024-05-19 22:16:15,613 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:16:17,324 INFO Watching for file changes with StatReloader
+2024-05-19 22:16:25,260 INFO secondon called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 22:16:33,145 INFO OrderForm has no errors
+2024-05-19 22:16:33,149 WARNING 18 is greater than 17
+2024-05-19 22:16:41,745 INFO OrderForm has no errors
+2024-05-19 22:16:41,792 WARNING Not Found: /medicines/7/order/create/
+2024-05-19 22:21:35,518 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:21:37,404 INFO Watching for file changes with StatReloader
+2024-05-19 22:21:45,648 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:21:47,247 INFO Watching for file changes with StatReloader
+2024-05-19 22:21:49,051 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:21:50,867 INFO Watching for file changes with StatReloader
+2024-05-19 22:21:55,910 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:21:57,976 INFO Watching for file changes with StatReloader
+2024-05-19 22:22:07,915 INFO OrderForm has no errors
+2024-05-19 22:22:07,952 WARNING Not Found: /medicines/7/order/create/
+2024-05-19 22:22:12,659 INFO OrderForm has no errors
+2024-05-19 22:22:12,675 WARNING Not Found: /medicines/7/order/create/
+2024-05-19 22:32:15,595 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:32:18,026 INFO Watching for file changes with StatReloader
+2024-05-19 22:32:33,098 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:32:34,931 INFO Watching for file changes with StatReloader
+2024-05-19 22:32:39,026 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:32:40,602 INFO Watching for file changes with StatReloader
+2024-05-19 22:32:45,410 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:32:46,732 INFO Watching for file changes with StatReloader
+2024-05-19 22:32:54,497 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:32:56,079 INFO Watching for file changes with StatReloader
+2024-05-19 22:32:57,856 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:32:59,295 INFO Watching for file changes with StatReloader
+2024-05-19 22:33:26,115 INFO secondon called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 22:33:31,826 INFO OrderForm has no errors
+2024-05-19 22:33:31,834 WARNING 9 is greater than 8
+2024-05-19 22:33:35,528 INFO secondon called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 22:33:40,667 INFO OrderForm has no errors
+2024-05-19 22:33:40,706 WARNING Not Found: /medicines/8/order/create/
+2024-05-19 22:40:28,980 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:40:30,743 INFO Watching for file changes with StatReloader
+2024-05-19 22:40:34,524 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:40:35,710 INFO Watching for file changes with StatReloader
+2024-05-19 22:59:14,436 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:59:17,469 INFO Watching for file changes with StatReloader
+2024-05-19 22:59:20,165 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:59:21,996 INFO Watching for file changes with StatReloader
+2024-05-19 22:59:23,688 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:59:25,625 INFO Watching for file changes with StatReloader
+2024-05-19 22:59:51,393 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:59:52,960 INFO Watching for file changes with StatReloader
+2024-05-19 22:59:56,840 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 22:59:58,043 INFO Watching for file changes with StatReloader
+2024-05-19 23:00:15,227 INFO secondon called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 23:00:21,681 INFO OrderForm has no errors
+2024-05-19 23:00:21,831 INFO secondon called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 23:00:26,345 INFO Order '21' was canceled by secondon
+2024-05-19 23:00:26,393 INFO secondon called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 23:00:33,229 INFO secondon called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 23:00:37,773 INFO OrderForm has no errors
+2024-05-19 23:00:37,776 WARNING 56 is greater than 55
+2024-05-19 23:00:41,858 INFO OrderForm has no errors
+2024-05-19 23:00:41,863 WARNING 56 is greater than 55
+2024-05-19 23:00:42,619 INFO OrderForm has no errors
+2024-05-19 23:00:42,621 WARNING 56 is greater than 55
+2024-05-19 23:00:43,470 INFO OrderForm has no errors
+2024-05-19 23:00:43,474 WARNING 56 is greater than 55
+2024-05-19 23:01:07,997 INFO secondon called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 23:01:11,785 INFO OrderForm has no errors
+2024-05-19 23:01:11,787 ERROR Medicine 10 does not exist in department 9
+2024-05-19 23:01:29,637 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:01:31,186 INFO Watching for file changes with StatReloader
+2024-05-19 23:01:41,411 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:01:42,850 INFO Watching for file changes with StatReloader
+2024-05-19 23:01:44,432 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:01:46,027 INFO Watching for file changes with StatReloader
+2024-05-19 23:02:05,346 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:02:07,074 INFO Watching for file changes with StatReloader
+2024-05-19 23:02:33,771 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:02:34,936 INFO Watching for file changes with StatReloader
+2024-05-19 23:02:36,471 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:02:38,398 INFO Watching for file changes with StatReloader
+2024-05-19 23:02:50,219 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:02:51,550 INFO Watching for file changes with StatReloader
+2024-05-19 23:03:06,480 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:03:07,835 INFO Watching for file changes with StatReloader
+2024-05-19 23:03:11,507 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:03:12,718 INFO Watching for file changes with StatReloader
+2024-05-19 23:03:27,487 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:03:29,148 INFO Watching for file changes with StatReloader
+2024-05-19 23:03:33,012 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:03:34,622 INFO Watching for file changes with StatReloader
+2024-05-19 23:03:48,805 INFO secondon called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 23:03:55,296 INFO OrderForm has no errors
+2024-05-19 23:03:55,302 WARNING 1000 is greater than 34
+2024-05-19 23:04:19,856 INFO OrderForm has no errors
+2024-05-19 23:04:19,901 WARNING Not Found: /medicines/22/order/create/
+2024-05-19 23:04:56,938 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:04:58,953 INFO Watching for file changes with StatReloader
+2024-05-19 23:05:22,295 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:05:23,539 INFO Watching for file changes with StatReloader
+2024-05-19 23:05:41,226 INFO secondon called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 23:05:49,512 INFO secondon called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 23:06:10,452 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:06:12,049 INFO Watching for file changes with StatReloader
+2024-05-19 23:06:16,170 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:06:17,529 INFO Watching for file changes with StatReloader
+2024-05-19 23:06:26,981 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:06:28,187 INFO Watching for file changes with StatReloader
+2024-05-19 23:09:01,793 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:09:03,687 INFO Watching for file changes with StatReloader
+2024-05-19 23:09:32,771 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:09:34,158 INFO Watching for file changes with StatReloader
+2024-05-19 23:09:36,029 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:09:37,547 INFO Watching for file changes with StatReloader
+2024-05-19 23:09:41,502 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:09:42,776 INFO Watching for file changes with StatReloader
+2024-05-19 23:09:48,762 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:09:50,589 INFO Watching for file changes with StatReloader
+2024-05-19 23:09:56,625 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:09:57,851 INFO Watching for file changes with StatReloader
+2024-05-19 23:10:00,417 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:10:01,657 INFO Watching for file changes with StatReloader
+2024-05-19 23:10:10,980 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:10:12,354 INFO Watching for file changes with StatReloader
+2024-05-19 23:10:16,272 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:10:18,194 INFO Watching for file changes with StatReloader
+2024-05-19 23:10:28,303 INFO secondon called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 23:10:36,996 INFO OrderForm has no errors
+2024-05-19 23:10:37,003 WARNING 7425325 is greater than 36
+2024-05-19 23:10:41,488 INFO OrderForm has no errors
+2024-05-19 23:10:41,726 ERROR Internal Server Error: /medicines/11/order/create/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 464, in post
+    department_medicine = DepartmentMedicine.objects.get(department_id=department, medicine_id=medic)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+pharmacy.models.DepartmentMedicine.DoesNotExist: DepartmentMedicine matching query does not exist.
+2024-05-19 23:21:28,718 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:21:30,728 INFO Watching for file changes with StatReloader
+2024-05-19 23:21:44,522 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:21:45,939 INFO Watching for file changes with StatReloader
+2024-05-19 23:21:48,743 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:21:49,756 INFO Watching for file changes with StatReloader
+2024-05-19 23:22:16,174 INFO secondon called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 23:22:22,025 INFO OrderForm has no errors
+2024-05-19 23:22:22,028 WARNING 23456 is greater than 29
+2024-05-19 23:22:33,712 INFO OrderForm has no errors
+2024-05-19 23:22:33,804 INFO secondon called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 23:24:11,225 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:24:12,666 INFO Watching for file changes with StatReloader
+2024-05-19 23:24:15,667 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:24:17,253 INFO Watching for file changes with StatReloader

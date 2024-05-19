@@ -13,7 +13,29 @@
             <p>{{ contact.description }}</p>
             <p>Тэлефон: {{ contact.user.phone }}</p>
             <p>Email: {{ contact.user.email }}</p>
+            {% if user.is_authenticated %}
+                {% if is_super %}
+                    <form action="{% url 'contact_edit' pk=contact.id %}" method="get">
+                        <button type="submit">Редактировать</button>
+                    </form>
+                    <form action="{% url 'contact_delete' contact.id %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit">Удалить</button>
+                    </form>
+                {% endif %}
+            {% endif %}
+
         </div>
     {% endfor %}
+
+    {% if user.is_authenticated %}
+        {% if is_super %}
+            <form action="{% url 'contact_create' %}" method="get">
+                <button type="submit">Дадаць</button>
+            </form>
+        {% endif %}    
+    {% endif %}
+
+
 </body>
 </html>

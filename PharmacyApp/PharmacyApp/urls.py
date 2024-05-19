@@ -26,8 +26,6 @@ user_patterns = [
 ]
 
 urlpatterns = [
-    #path(' ', admin.site.urls),
-    #path('', views.home, name='home')
     path('', views.home, name='home'),
 
     path('admin/', admin.site.urls),
@@ -37,7 +35,12 @@ urlpatterns = [
     path('about/', views.about_company, name='about'),
     path('news/', views.news, name='news'),
     path('faqs/', views.faqs, name='terms'),
+
     path('contacts/', views.contacts, name='contacts'),
+    path('contacts/new/', views.ContactCreateView.as_view(), name='contact_create'),
+    path('contacts/<int:pk>/edit/', views.ContactUpdateView.as_view(), name='contact_edit'),
+    path('contacts/<int:pk>/delete/', views.ContactDeleteView.as_view(), name='contact_delete'),
+
     path('privacy-policy', views.privacy_policy, name='privacy_policy'),
     path('vacancies/', views.vacancies, name='vacancies'),
     path('reviews/', views.reviews, name='reviews'),
@@ -61,6 +64,9 @@ urlpatterns = [
 
     re_path(r'medicines/(?P<pk>\d+)/order/create/$', views.OrderCreateView.as_view(), name='create_order'),
     re_path(r'user/(?P<pk>\d+)/', include(user_patterns)),
+    path('order/<int:pk>/<int:jk>/', views.UserOrderView.as_view(), name='user_order'),
+    path('order/<int:pk>/<int:jk>/cancel/', views.OrderCancelView.as_view(), name='order_cancel'),
+    
 
     path('suppliers/', views.SupplierListView.as_view(), name='suppliers'),
     path('suppliers/new/', views.SupplierCreateView.as_view(), name='supplier_create'),
@@ -70,7 +76,7 @@ urlpatterns = [
     path('orders/', views.OrderListView.as_view(), name='orders'),
 
     path('clients', statistics.clients, name='clients'),
-    path('medic_stat', statistics.medicine, name='tours_stat'),
+    path('medic_stat', statistics.medicine, name='medic_stat'),
 
     path('sales', statistics.sales, name='sales'),
     path('revenue_chart', statistics.department_revenue_chart, name='department_revenue_chart'),

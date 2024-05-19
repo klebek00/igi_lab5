@@ -46,12 +46,12 @@ def medicine(request):
 
 def sales(request):
     if request.user.is_authenticated and request.user.is_superuser: 
-        orders = Sale.objects.all()
+        orders = Sale.objects.filter(is_canceled=False)
         prices = []
         general_sales = 0.0
         for order in orders:
-            prices.append(order.price)
-            general_sales += order.price
+            prices.append(order.price_prom)
+            general_sales += order.price_prom
     
         average_sales = round(mean(prices), 2)
         median_sales = round(median(prices), 2)
@@ -72,9 +72,8 @@ def sales(request):
 
 
 def yearly_sales_report(year):
-    orders = Sale.objects.filter(date__year=year)
-    total_sales_per_purchase = orders.annotate(total_sales=Sum('price')).values_list('total_sales', flat=True)
-    total_sales_for_year = sum(total_sales_per_purchase)
+    orders = Sale.objects.filter(date__year=year, is_canceled=False)
+    total_sales_for_year = orders.aggregate(total_sales=Sum('price_prom'))['total_sales'] or 0
     return total_sales_for_year
 
 
@@ -160,7 +159,7 @@ def department_revenue_chart(request):
         data = {}
 
         for department in departments:
-            sales = Sale.objects.filter(department=department, date__year=current_year)
+            sales = Sale.objects.filter(department=department, date__year=current_year, is_canceled=False)
             revenue = sales.aggregate(total_revenue=Sum('price'))['total_revenue'] or 0
             data[department.no] = revenue
 

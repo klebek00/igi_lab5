@@ -20,7 +20,9 @@
                 <p>Кол-ць: {{ order.quantity }}</p>
                 <p>Кошт: {{ order.price_prom }}</p>
                 <p>Кошт без зніжкі: {{ order.price }}</p>
-
+                {% if order.is_canceled %}
+                <p>ЗАМОВА АДМЕНЕНА</p>
+                {% endif %}
             </tr>
         </table>
     {% endfor %}

@@ -7,17 +7,27 @@
 </head>
 <body>
     <a href="{% url 'home' %}">Галоўная</a>
+    <a href="{% url 'medicines' %}">Назад да лекаў</a>
 
     <h1>Заказ #{{order.id}}</h1>
     <table border="1">
-        <tr>Прэпарат
+            <p>Прэпарат: {{ order.medicine }}</p>
             <p>Дата: {{ order.date|date:"d.m.Y" }}</p> 
             <p>Час: {{ order.date|time:"H:i" }}</p>
             <p>Аддзяленне: {{ order.department }}</p>
-            <p>Прэпарат: {{ order.medicine }}</p>
             <p>Кол-ць: {{ order.quantity }}</p>
             <p>Кошт: {{ order.price_prom }}</p>
         </tr>
     </table>
+
+    {% if not order.is_canceled %}
+        <form method="post" action="{% url 'order_cancel' pk=order.user.id jk=order.id %}">
+            {% csrf_token %}
+            <button type="submit">Адмяніць заказ</button>
+        </form>
+    {% else %}
+        <p>Гэты заказ быў адменены</p>
+    {% endif %}
+    
 </body>
 </html>

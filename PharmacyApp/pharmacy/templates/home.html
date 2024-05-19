@@ -11,43 +11,53 @@
     </style>
 </head>
 <body>
+    <div>
+        <p>Бягучая дата і час (UTC): {{ current_date_utc }}</p>
+        <p>Бягучая дата і час ({{ user_timezone }}): {{ current_date_user_tz }}</p>
+    </div>
+
     <div class="navbar">
-        <a href="{% url 'about' %}">О нас</a>
-        <a href="{% url 'news' %}">Новости</a>
-        <a href="{% url 'terms' %}">Вопросы и ответы</a>
-        <a href="{% url 'contacts' %}">Контакты</a>
-        <a href="{% url 'vacancies' %}">Вакансии</a>
-        <a href="{% url 'reviews' %}">Отзывы</a>
-        <a href="{% url 'promocodes' %}">Промокоды</a>
-        <a href="{% url 'medicines' %}">Лекарства</a>
-        <a href="{% url 'catigories' %}">Категории</a>
+        <a href="{% url 'about' %}">Пра нас</a>
+        <a href="{% url 'news' %}">Навіны</a>
+        <a href="{% url 'terms' %}">Пытанні і Адказы</a>
+        <a href="{% url 'contacts' %}">Кантакты</a>
+        <a href="{% url 'vacancies' %}">Вакансіі</a>
+        <a href="{% url 'reviews' %}">Водгукі</a>
+        <a href="{% url 'promocodes' %}">Прамакоды</a>
+        <a href="{% url 'medicines' %}">Лекі</a>
+        <a href="{% url 'catigories' %}">Катэгорыі</a>
 
         {% if user.is_authenticated %}
             {% if is_super %}
-                <a href="{% url 'department_revenue_chart' %}">График выручки по отделам</a>
-                <a href="{% url 'clients' %}">Клиенты</a>
-                <a href="{% url 'sales' %}">Продажи</a>
-                <a href="{% url 'suppliers' %}">Поставщики</a>
-                <a href="{% url 'departments' %}">Отделы</a>
-                <a href="{% url 'logout' %}">Выйти</a>
+                <a href="{% url 'suppliers' %}">Пастаўшчыкі</a>
+                <a href="{% url 'departments' %}">Аддзялення</a>
+                <a href="{% url 'department_revenue_chart' %}">Графік выручкі па аддзелах</a>
+                <a href="{% url 'medic_stat' %}">Статыстыка па медыкаментах</a>
+                <a href="{% url 'clients' %}">Статыстыка кліентаў</a>
+                <a href="{% url 'sales' %}">Продаж</a>
+                <a href="{% url 'logout' %}">Выйсці</a>
             {% elif user.is_staff %}
                 <a href="{% url 'suppliers' %}">Поставщики</a>
                 <a href="{% url 'orders' %}">Заказы</a>
-                <a href="{% url 'logout' %}">Выйти</a>
+                <a href="{% url 'logout' %}">Выйсці</a>
             {% else %}
-                <a href="{% url 'departments' %}">Отделы</a>
-                <a href="{% url 'orders_list' pk=user_id %}">Мои заказы</a>
-                <a href="{% url 'logout' %}">Выйти</a>
+                <a href="{% url 'departments' %}">Аддзялення</a>
+                <a href="{% url 'orders_list' pk=user_id %}">Маі замовы</a>
+                <a href="{% url 'rx_search' %}">RX</a>
+                <a href="{% url 'medical_facts' %}">Факты</a>
+                <a href="{% url 'logout' %}">Выйсці</a>
             {% endif %}
         {% else %}
-            <a href="{% url 'login' %}">Войти</a>
-            <a href="{% url 'register' %}">Регистрация</a>
+            <a href="{% url 'login' %}">Увайсці</a>
+            <a href="{% url 'register' %}">Рэгістрацыя</a>
         {% endif %}
     </div>
 
     <h2>{{ latest_article.title }}</h2>
     <p>{{ latest_article.content }}</p>
     <p>Апублікаваны: {{ latest_article.date|date:"d.m.Y" }}&nbsp;{{ latest_article.date|time:"H:i" }}</p>
-    <img src="{{ latest_article.image.url }}">
+    <img src="{{ latest_article.image.url }}"height="300" width="300">
+
+    
 </body>
 </html>

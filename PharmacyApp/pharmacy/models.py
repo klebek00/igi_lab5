@@ -107,6 +107,7 @@ class Sale(models.Model):
     quantity = models.PositiveIntegerField()
     price = models.FloatField()
     price_prom = models.FloatField()
+    is_canceled = models.BooleanField(default=False)
 
     def use_discount(self, promocode):
         if UsedDiscounts.objects.filter(promocode_id=promocode, user_id=self.user).exists():
@@ -151,6 +152,7 @@ class Contact(models.Model):
     description = models.TextField()
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     photo = models.ImageField(upload_to='images/')
+
 
 
 class Vacancy(models.Model):

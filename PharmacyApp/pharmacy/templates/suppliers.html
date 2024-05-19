@@ -29,11 +29,11 @@
     {% if user.is_authenticated %}
     {% if is_super %}
     <form action="{% url 'supplier_edit' pk=supplier.id %}" method="get">
-        <button type="submit">Редактировать</button>
+        <button type="submit">Змяніць</button>
     </form>
     <form action="{% url 'supplier_delete' supplier.id %}" method="post" style="display: inline;">
         {% csrf_token %}
-        <button type="submit">Удалить</button>
+        <button type="submit">Выдаліць</button>
     </form>
     {% endif %}
 {% endif %}
@@ -42,7 +42,7 @@
     {% if user.is_authenticated %}
     {% if is_super %}
     <form action="{% url 'supplier_create' %}" method="get">
-        <button type="submit">Дадаць</button>
+        <button type="submit">Стварыць</button>
     </form>
     {% endif %}    
     {% endif %}
