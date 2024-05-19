@@ -15469,3 +15469,126 @@ pharmacy.models.DepartmentMedicine.DoesNotExist: DepartmentMedicine matching que
 2024-05-19 23:24:12,666 INFO Watching for file changes with StatReloader
 2024-05-19 23:24:15,667 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
 2024-05-19 23:24:17,253 INFO Watching for file changes with StatReloader
+2024-05-19 23:24:27,257 INFO OrderForm has no errors
+2024-05-19 23:24:27,261 WARNING 12187381 is greater than 27
+2024-05-19 23:26:43,656 INFO secondon called UserOrderView | user's Timezone: Europe/Moscow
+2024-05-19 23:26:45,250 INFO secondon called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 23:26:51,989 INFO secondon LOGOUT (status: client) | user's Timezone: Europe/Moscow
+2024-05-19 23:26:59,988 INFO User LOGIN
+2024-05-19 23:27:45,323 INFO admin called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-19 23:28:33,779 INFO admin LOGOUT (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 23:28:39,923 INFO User LOGIN
+2024-05-19 23:28:42,162 INFO Med1 called OrderListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 23:28:42,264 ERROR Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 611, in get
+    total_revenue = sum(sale.price_ for sale in sales)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 611, in <genexpr>
+    total_revenue = sum(sale.price_ for sale in sales)
+                        ^^^^^^^^^^^
+AttributeError: 'Sale' object has no attribute 'price_'
+2024-05-19 23:28:47,143 INFO Med1 called OrderListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 23:28:47,235 ERROR Internal Server Error: /orders/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 611, in get
+    total_revenue = sum(sale.price_ for sale in sales)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 611, in <genexpr>
+    total_revenue = sum(sale.price_ for sale in sales)
+                        ^^^^^^^^^^^
+AttributeError: 'Sale' object has no attribute 'price_'
+2024-05-19 23:29:08,329 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py changed, reloading.
+2024-05-19 23:29:11,508 INFO Watching for file changes with StatReloader
+2024-05-19 23:29:12,927 INFO Med1 called OrderListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 23:30:08,722 INFO Med1 LOGOUT (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 23:30:14,836 INFO User LOGIN
+2024-05-19 23:30:31,574 INFO first called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 23:30:36,006 INFO first called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 23:30:45,934 INFO OrderForm has no errors
+2024-05-19 23:30:46,034 INFO first called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 23:30:50,250 INFO first LOGOUT (status: client) | user's Timezone: Europe/Moscow
+2024-05-19 23:30:56,737 INFO User LOGIN
+2024-05-19 23:30:59,212 INFO Med1 called OrderListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 23:31:29,365 INFO Med1 LOGOUT (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 23:31:37,864 INFO User LOGIN
+2024-05-19 23:32:03,682 INFO admin called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-19 23:32:18,800 INFO admin called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-19 23:32:48,972 INFO Department 'Àääçÿëåííå ¹7' was created
+2024-05-19 23:32:48,991 INFO admin called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-19 23:33:28,966 INFO admin LOGOUT (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 23:34:46,739 WARNING Registration form is invalid
+2024-05-19 23:35:04,408 INFO Registration form has no errors
+2024-05-19 23:35:06,187 ERROR ValidationError, +375(29)8461918 is in incorrect format OR 18 < 2 < 100
+NoneType: None
+2024-05-19 23:35:06,297 ERROR Internal Server Error: /register/
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\views.py", line 211, in post
+    user.save()
+  File "D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\models.py", line 33, in save
+    raise django.forms.ValidationError("Error while creating user (Check phone number and age!)")
+django.core.exceptions.ValidationError: ['Error while creating user (Check phone number and age!)']
+2024-05-19 23:48:45,860 INFO Watching for file changes with StatReloader
+2024-05-19 23:49:25,862 WARNING Registration form is invalid
+2024-05-19 23:49:48,902 WARNING Registration form is invalid
+2024-05-19 23:50:26,860 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\models.py changed, reloading.
+2024-05-19 23:50:28,850 INFO Watching for file changes with StatReloader
+2024-05-19 23:51:13,190 INFO D:\2_rehc\igi\myapp\PharmacyApp\pharmacy\models.py changed, reloading.
+2024-05-19 23:51:14,696 INFO Watching for file changes with StatReloader
+2024-05-19 23:51:32,455 WARNING Registration form is invalid
+2024-05-19 23:52:30,152 INFO Registration form has no errors
+2024-05-19 23:52:31,998 INFO user1 REGISTER (status: client) | user's Timezone: Europe/Moscow
+2024-05-19 23:52:50,743 INFO User LOGIN
+2024-05-19 23:52:53,780 INFO user1 called UserOrderView | user's Timezone: Europe/Moscow
+2024-05-19 23:53:16,383 INFO user1 called OrderCreateView | user's Timezone: Europe/Moscow
+2024-05-19 23:53:23,106 INFO OrderForm has no errors
+2024-05-19 23:53:23,174 INFO Promocode HELP1 used by user1
+2024-05-19 23:53:23,253 INFO user1 called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 23:53:31,095 INFO user1 called UserOrderView | user's Timezone: Europe/Moscow
+2024-05-19 23:53:32,212 INFO user1 called SpecificOrderView | user's Timezone: Europe/Moscow
+2024-05-19 23:53:35,022 INFO user1 LOGOUT (status: client) | user's Timezone: Europe/Moscow
+2024-05-19 23:53:42,011 INFO User LOGIN
+2024-05-19 23:53:43,325 INFO Med1 called OrderListView (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 23:53:49,320 INFO Med1 LOGOUT (status: staff) | user's Timezone: Europe/Moscow
+2024-05-19 23:53:54,614 INFO User LOGIN
+2024-05-19 23:54:50,683 INFO admin called DepartmentInfo | user's Timezone: Europe/Moscow
+2024-05-19 23:55:24,808 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\settings.py changed, reloading.
+2024-05-19 23:55:27,429 INFO Watching for file changes with StatReloader
+2024-05-20 00:01:53,941 INFO D:\2_rehc\igi\myapp\PharmacyApp\PharmacyApp\settings.py changed, reloading.
+2024-05-20 00:01:55,992 INFO Watching for file changes with StatReloader

@@ -13,7 +13,7 @@
             <p>Ацэнка: <b>{{ review.rating }}/5</b></p>
             <p>{{ review.text }}</p>
             <p>Ад: {{ review.user.username }}</p>
-            <p>Дата: {{ review.date }}</p>
+            <p>Дата: {{ review.date|date:"d.m.Y" }}</p>
 
             {% if review.user == request.user %}
                 <a href="{% url 'edit_review' review.id %}">Змяніць </a>

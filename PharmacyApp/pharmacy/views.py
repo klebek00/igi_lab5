@@ -608,7 +608,7 @@ class OrderListView(View):
             logging.info(f"{request.user.username} called OrderListView (status: {request.user.status}) | user's Timezone: {request.user.timezone}")
             
             sales = Sale.objects.filter(is_canceled=False)      
-            total_revenue = sum(sale.price_ for sale in sales)
+            total_revenue = sum(sale.price_prom for sale in sales)
 
             revenue_by_department = {}
             for sale in sales:

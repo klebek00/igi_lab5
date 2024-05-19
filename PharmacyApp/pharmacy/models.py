@@ -15,23 +15,32 @@ class User(AbstractUser):
         ("client","client"),
         ("staff","staff")
     )
+    def validate_phone(value):
+        phone_pattern = re.compile(r'\+375\((29|33|44|25)\)\d{7}')
+        if not re.fullmatch(phone_pattern, str(value)):
+            raise django.forms.ValidationError("Няправільны фармат нумара тэлефона. Правільны фармат: +375(XX)XXXXXXX.")
+
+    def validate_age(value):
+        if value < 18 or value > 100:
+            raise django.forms.ValidationError("Толькі для асоб старэйшых за 18 гадоў.")
+        
     status = models.CharField(choices=status, default="client", max_length=6)
-    age = models.PositiveSmallIntegerField()
-    phone = models.CharField(max_length=15)
+    age = models.PositiveSmallIntegerField(validators=[validate_age])
+    phone = models.CharField(max_length=15, validators=[validate_phone])
     address = models.CharField(max_length=255)
     timezone = get_localzone_name()
     groups = None
     user_permissions = None
 
     
-    def save(self, *args, **kwargs):
-        phone_pattern = re.compile(r'\+375\((29|33|44|25)\)\d{7}')
-        if not re.fullmatch(phone_pattern, str(self.phone)) or self.age < 18 or self.age > 100:
+    # def save(self, *args, **kwargs):
+    #     phone_pattern = re.compile(r'\+375\((29|33|44|25)\)\d{7}')
+    #     if not re.fullmatch(phone_pattern, str(self.phone)) or self.age < 18 or self.age > 100:
 
-            logging.exception(f"ValidationError, {self.phone} is in incorrect format OR 18 < {self.age} < 100")
+    #         logging.exception(f"ValidationError, {self.phone} is in incorrect format OR 18 < {self.age} < 100")
 
-            raise django.forms.ValidationError("Error while creating user (Check phone number and age!)")
-        super().save(*args, **kwargs)
+    #         raise django.forms.ValidationError("Error while creating user (Check phone number and age!)")
+    #     super().save(*args, **kwargs)
 
     def __str__(self):
         return self.first_name
